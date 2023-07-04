@@ -1,23 +1,27 @@
 .wrap{
   margin: 0;
   padding: 0;
+  list-style: none;
   box-sizing: border-box;
-  
 }
 .main-bg{
   height: 300px;
   background-image: url('./img/main.png');
   background-position: center;
 }
-#listWrap{
+.listWrap{
   width: 1200px;
   margin: auto;
   border: 1px royalblue solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.listWrap{
-  width: 200px;
+.list{
+  margin: 12px;
   border: 1px red solid;
+  padding: 4px;
 }
 .img{
-  width: 100px;
+  max-width: 250px;
 }

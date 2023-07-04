@@ -11,13 +11,14 @@ function App() {
   // console.log(shoes);
 
   return (
-    <div className='wrap'>
+    <div>
       <div>
         <Nav/>
       </div>
       <div className='main-bg'>
       </div>
-      <div id='listWrap'>
+      <h2>오늘은 이 상품 어때요 ?</h2>
+      <div >
         <List/>
       </div>
     </div>
