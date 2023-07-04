@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Route,Routes,Link } from 'react-router-dom'
 import './App.css';
 
 import Nav from './components/nav'
@@ -11,6 +12,10 @@ function App() {
   // console.log(shoes);
   return (
     <div>
+      <Routes>
+        <Route path='/mypage' element={<div>마이페이지</div>}></Route>
+        <Route path='/login' element={<div>로그인페이지</div>}></Route>
+      </Routes>
       <div>
         <Nav/>
       </div>
