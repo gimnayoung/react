@@ -8,23 +8,23 @@
   height: 300px;
   background-image: url('./img/main.png');
   background-position: center;
+  background-size: 50%;
 }
 .main-ul{
-  width: 1300px;
+  max-width: 1300px;
   margin: auto;
   justify-content: center;
   list-style: none;
   display: flex;
   justify-content: space-between;
   border: 1px green solid;
-  /* flex-direction: row; */
 }
 li{
   margin: 12px;
   font-weight: bold;
 }
 .listWrap{
-  width: 1300px;
+  max-width: 1300px;
   margin: auto;
   border: 1px royalblue solid;
   display: flex;
@@ -37,9 +37,19 @@ li{
   padding: 4px;
 }
 .img{
-  max-width: 290px;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+.imgBox{
+  border: 1px palevioletred solid;
+  width: 285px;
+  height: 300px;
 }
 .shopname{
   font-size: 12px;
   color: rgb(68, 67, 67);
+}
+.detail-wrap{
+  display: flex;
 }

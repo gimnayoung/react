@@ -1,16 +1,23 @@
 import { useState } from "react"
+import { Route,Routes,Link,useNavigate,Outlet } from 'react-router-dom'
+
+
 import Data from '../data/data.json'
 
-function List(){
+function List(props){
+    const navigate=useNavigate();
     const [shoes] = useState(Data);
+    console.log(props); //{id:1}
     return(
         <div className='wrap'>
             <div className="listWrap">
                 {
                     shoes.data.map((list)=>(
                         <div className="list">
-                            <a>
-                                <img className='img' src={list.img}/>
+                            <a onClick={()=>navigate(`/detail/${list.id}`)}>
+                                <div className="imgBox">
+                                    <img className='img' src={list.img}/>
+                                </div>
                                 <p className="shopname">{list.source}</p>
                                 <h4>{list.title}</h4>
                                 <p>{list.content}</p>

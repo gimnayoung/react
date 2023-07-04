@@ -1,18 +1,19 @@
-import { Route,Routes,Link } from 'react-router-dom'
+import { Route,Routes,Link,useNavigate } from 'react-router-dom'
 
 function Nav(){
+    let navigate=useNavigate();
     return(
     <div className="wrap">
         <div>
             <ul className="main-ul">
-                <Link to='/'><li>홈</li></Link>
+                <a onClick={()=>{navigate('/')}} ><li>홈</li></a>
                 <a><li>카테고리</li></a>
                 <a><li>하루배송</li></a>
                 <a><li>혜택존</li></a>
                 <a><li>베스트</li></a>
                 <a><li>신상</li></a>
-                <Link to='/mypage'><li>마이페이지</li></Link>
-                <Link to='/login'><li>로그인</li></Link>
+                <a onClick={()=>{navigate('/mypage')}}><li>마이페이지</li></a>
+                <a onClick={()=>{navigate('/login')}}><li>로그인</li></a>
             </ul>
         </div>
     </div>
