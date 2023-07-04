@@ -2,20 +2,34 @@
 "data":[
     {
       "id" : 0,
+      "source":"키미스",
       "title" : "White and Black",
       "content" : "Born in France",
+      "img":"https://d3ha2047wt6x28.cloudfront.net/jgmitm1Mj1I/pr:GOODS_INFORMATION/aHR0cHM6Ly9nbXRsbjAzMjk5Lm9wZW5ob3N0LmNhZmUyNC5jb20vd2ViL3VwbG9hZC9OTkVkaXRvci8yMDIzMDQyMi9lYWEzMWFkNDQyNzkwOTA1ZWNlMWI3ODQyM2I2YjE1Zi5qcGc",
       "price" : 120000
     },
     {
       "id" : 1,
+      "source":"기프티박스",
       "title" : "Red Knit",
       "content" : "Born in Seoul",
+      "img":"https://gifteabox.com/web/product/tiny/202301/4face0851a38f6564d109d58c74070d5.jpg",
       "price" : 110000
     },
     {
       "id" : 2,
+      "source":"엘루아",
       "title" : "Grey Yordan",
       "content" : "Born in the States",
+      "img":"https://cf.product-image.s.zigzag.kr/original/d/2023/6/14/24413_202306141451060343_41516.jpg?width=1080&height=1080&quality=80&format=jpeg",
+      "price" : 130000
+    },
+    {
+      "id" : 3,
+      "source":"슈가파우더",
+      "title" : "Grey Yordan",
+      "content" : "Born in the States",
+      "img":"https://m.sugarpowder.kr/web/upload/NNEditor/20230201/d389f0e8388e0149ce46f7137351dd2b.jpg",
       "price" : 130000
     }
 ]

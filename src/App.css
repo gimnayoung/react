@@ -9,8 +9,22 @@
   background-image: url('./img/main.png');
   background-position: center;
 }
+.main-ul{
+  width: 1300px;
+  margin: auto;
+  justify-content: center;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  border: 1px green solid;
+  /* flex-direction: row; */
+}
+li{
+  margin: 12px;
+  font-weight: bold;
+}
 .listWrap{
-  width: 1200px;
+  width: 1300px;
   margin: auto;
   border: 1px royalblue solid;
   display: flex;
@@ -23,5 +37,9 @@
   padding: 4px;
 }
 .img{
-  max-width: 250px;
+  max-width: 290px;
+}
+.shopname{
+  font-size: 12px;
+  color: rgb(68, 67, 67);
 }
