@@ -4,6 +4,23 @@
   list-style: none;
   box-sizing: border-box;
 }
+h1{
+  width: 400px;
+  margin: auto;
+
+}
+.boomwrap{
+  max-width: 400px;
+  height: 500px;
+  border-radius: 15px;
+  background-color: #e8e9e9;
+  padding: 12px;
+}
+.boom{
+  width: 350px;
+  margin: auto;
+  
+}
 .wrap {
   list-style: none;
   box-sizing: border-box;
@@ -39,16 +56,22 @@ li {
   margin: 12px;
   border: 1px red solid;
   padding: 4px;
+  position: relative;
 }
 .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.2s linear;
+}
+.img:hover{
+  transform: scale(1.1);
 }
 .imgBox {
   border: 1px palevioletred solid;
   width: 285px;
   height: 300px;
+  overflow: hidden;
 }
 .productBox {
   margin: 8px;
@@ -82,4 +105,21 @@ li {
   padding: 18px 48px 18px 48px;
   font-size: 16px;
   font-weight: bold;
+}
+a.icon{
+  border: 3px red solid;
+  position: absolute;
+  bottom: 125px;
+  right:10px;
+  font-size: 25px;
+}
+.footerwrap{
+  background-color: #f7f8fa;
+  height: 150px;
+}
+.footer{
+  max-width: 1300px;
+  background-color: #f7f8fa;
+  margin: auto;
+  border: 1px royalblue solid;
 }
