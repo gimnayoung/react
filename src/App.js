@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route,Routes,Link,useNavigate,Outlet } from 'react-router-dom'
 import './App.css';
 
@@ -22,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={
           <>
+          <Boom/>
             <div>
               <Nav/>
             </div>

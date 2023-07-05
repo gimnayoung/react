@@ -7,7 +7,6 @@ function Nav(){
         <div>
             <ul className="main-ul">
                 <a onClick={()=>{navigate('/')}} ><li>홈</li></a>
-                <a><li>카테고리</li></a>
                 <a><li>하루배송</li></a>
                 <a><li>혜택존</li></a>
                 <a><li>베스트</li></a>
