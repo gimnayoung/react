@@ -4,27 +4,80 @@
   list-style: none;
   box-sizing: border-box;
 }
-h1{
+h1 {
   width: 400px;
   margin: auto;
 }
-.boomwrap{
+.boomwrap {
   max-width: 400px;
   height: 500px;
   border-radius: 15px;
   background-color: #e8e9e9;
   padding: 12px;
   position: absolute;
-  top:25%;
+  top: 25%;
   left: 25%;
   z-index: 3;
 }
-.boom{
+.boom {
   width: 350px;
   margin: auto;
   border: 1px blue solid;
   text-align: center;
-  
+}
+.mainBg input[id*="slide"] {
+  display: none;
+}
+.mainBg [id="slide01"]:checked ~ .slidewrap .mainBg-ul > li {
+  transform: translateX(0%);
+}
+.mainBg [id="slide02"]:checked ~ .slidewrap .mainBg-ul > li {
+  transform: translateX(-100%);
+}
+.mainBg [id="slide03"]:checked ~ .slidewrap .mainBg-ul > li {
+  transform: translateX(-200%);
+}
+.mainBg [id="slide04"]:checked ~ .slidewrap .mainBg-ul > li {
+  transform: translateX(-300%);
+}
+.slidewrap {
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.mainBg-ul {
+  white-space: nowrap;
+  font-size: 0;
+}
+.mainBg-li {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  transition: all.5s;
+}
+.mainBg-li > a {
+  display: block;
+  position: relative;
+}
+.mainBg-li > a img {
+  width: 100%;
+}
+.mainBg-li label {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 50px;
+  cursor: pointer;
+  border: 1px red solid;
+}
+.leftslide {
+  left: 30px;
+  background: url("./img/left.png") center center / 100% no-repeat;
+}
+.rightslide {
+  right: 30px;
+  background: url("./img/left.png") center center / 100% no-repeat;
 }
 .wrap {
   list-style: none;
@@ -69,7 +122,7 @@ li {
   object-fit: cover;
   transition: all 0.2s linear;
 }
-.img:hover{
+.img:hover {
   transform: scale(1.1);
 }
 .imgBox {
@@ -111,39 +164,39 @@ li {
   font-size: 16px;
   font-weight: bold;
 }
-a{
+a {
   cursor: pointer;
 }
-a .f-icon{
+a .f-icon {
   border: 3px red solid;
   position: absolute;
   bottom: 125px;
-  right:10px;
+  right: 10px;
   font-size: 25px;
 }
-a .icon{
+a .icon {
   border: 3px red solid;
   position: absolute;
   bottom: 125px;
-  right:10px;
+  right: 10px;
   font-size: 25px;
 }
-.footerwrap{
+.footerwrap {
   background-color: #f7f8fa;
   height: 150px;
 }
-.footer{
+.footer {
   max-width: 1300px;
   background-color: #f7f8fa;
   margin: auto;
   border: 1px royalblue solid;
 }
-span{
+span {
   color: rgb(232, 31, 31);
   font-weight: bolder;
   font-size: 18px;
 }
-div .coupon{
+div .coupon {
   background-image: url("./img/coupon.jpg");
   margin: auto;
   height: 200px;
