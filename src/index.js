@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  //디버깅용 1번실행+1번실행 
   <React.StrictMode>
     <BrowserRouter>
       <App />

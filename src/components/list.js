@@ -15,6 +15,7 @@ function List(props) {
             <a onClick={() => navigate(`/detail/${list.id}`)}>
               <div className="imgBox">
                 <img className="img" src={list.img} />
+                <a className="icon">❤</a>
               </div>
               <div className="productBox">
                 <p className="shopname">{list.source}</p>
