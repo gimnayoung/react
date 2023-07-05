@@ -6,6 +6,7 @@ import Data from "../data/data.json";
 function List(props) {
   const navigate = useNavigate();
   const [shoes] = useState(Data);
+  const [heart,setHeart]=useState(false)
   console.log(props); //{id:1}
   return (
     <div className="wrap">

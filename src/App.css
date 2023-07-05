@@ -7,7 +7,6 @@
 h1{
   width: 400px;
   margin: auto;
-
 }
 .boomwrap{
   max-width: 400px;
@@ -15,10 +14,16 @@ h1{
   border-radius: 15px;
   background-color: #e8e9e9;
   padding: 12px;
+  position: absolute;
+  top:25%;
+  left: 25%;
+  z-index: 3;
 }
 .boom{
   width: 350px;
   margin: auto;
+  border: 1px blue solid;
+  text-align: center;
   
 }
 .wrap {
@@ -106,7 +111,17 @@ li {
   font-size: 16px;
   font-weight: bold;
 }
-a.icon{
+a{
+  cursor: pointer;
+}
+a .f-icon{
+  border: 3px red solid;
+  position: absolute;
+  bottom: 125px;
+  right:10px;
+  font-size: 25px;
+}
+a .icon{
   border: 3px red solid;
   position: absolute;
   bottom: 125px;
@@ -122,4 +137,17 @@ a.icon{
   background-color: #f7f8fa;
   margin: auto;
   border: 1px royalblue solid;
+}
+span{
+  color: rgb(232, 31, 31);
+  font-weight: bolder;
+  font-size: 18px;
+}
+div .coupon{
+  background-image: url("./img/coupon.jpg");
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  background-position: center;
+  background-size: 100%;
 }
