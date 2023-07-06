@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 function Detail(props) {
   const [alert, setAlert] = useState(true);
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   let {id}=useParams();
   //detail 처음 장착됐을때,업데이트될때 실행
   // useEffect(() => {
