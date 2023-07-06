@@ -1,5 +1,4 @@
-{
-"data":[
+[
     {
       "id" : 0,
       "source":"키미스",
@@ -63,38 +62,5 @@
       "content" : "Born in the States",
       "img":"https://m.lodim.kr/web/product/extra/small/202207/e600477bfc87d596dc994de067c5d9b2.png",
       "price" : 130000
-    },
-    {
-      "id" : 8,
-      "source":"크루디",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
-      "img":"https://cf.product-image.s.zigzag.kr/original/c/11/942/272/119422721-8258930302753739055.jpeg?width=1080&height=1080&quality=80&format=jpeg",
-      "price" : 130000
-    },
-    {
-      "id" : 9,
-      "source":"키튼",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
-      "img":"https://cf.product-image.s.zigzag.kr/original/d/2022/5/7/15576_202205070050080599_65675.jpeg?width=1080&height=1080&quality=80&format=jpeg",
-      "price" : 130000
-    },
-    {
-      "id" : 10,
-      "source":"sixty-percent",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
-      "img":"https://cdn.shopify.com/s/files/1/0066/0360/4086/products/3e76e8f19cd448da8715c546f5acb758.jpg?v=1681354254",
-      "price" : 130000
-    },
-    {
-      "id" : 11,
-      "source":"코디북",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
-      "img":"https://i0.codibook.net/files/1980112015607/9a7328d0a9cd9c4d/1092456437.jpg",
-      "price" : 130000
     }
 ]
-}
