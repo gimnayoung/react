@@ -1,18 +1,24 @@
 import { useState } from "react";
-import { Route, Routes, Link, useNavigate, Outlet, useParams } from "react-router-dom";
-
+import {
+  Route,
+  Routes,
+  Link,
+  useNavigate,
+  Outlet,
+  useParams,
+} from "react-router-dom";
 
 function List(props) {
   const navigate = useNavigate();
-  const [count,setCount]=useState(1);
- let {i}=useParams();
+  const [count, setCount] = useState(1);
+  // let { i } = useParams();
   // console.log(serverdata);
   return (
     <div className="wrap">
       <div className="listWrap">
-        {props.shoes.map((list,i) => (
+        {props.shoes.map((list, i) => (
           <div className="list">
-            <a onClick={() => navigate(`/detail/${props.shoes}`)}>
+            <a onClick={() => navigate(`/detail/${i}`)}>
               <div className="imgBox">
                 <img className="img" src={list.img} />
                 <a className="icon">❤</a>
@@ -25,8 +31,7 @@ function List(props) {
               </div>
             </a>
           </div>
-        ))
-        }
+        ))}
       </div>
       {/* <button onClick={()=>{
         //url로 get요청
