@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, Link, useNavigate, Outlet } from "react-router-dom";
 import "./App.css";
+import axios from "axios";
 
 import Nav from "./components/nav";
 import Data from "./data/data.json";
@@ -14,7 +15,8 @@ import Boom from "./components/boom";
 function App() {
   // console.log(shoes);
   let navigate = useNavigate();
-  const [shoes] = useState(Data);
+  const [shoes,setShoes] = useState(Data);
+  const [count,setCount]=useState(1);
 
   return (
     <div>
@@ -30,16 +32,33 @@ function App() {
               <MainBG />
               <h1>오늘은 이 상품 어때요?</h1>
               <div>
-                <List />
+                <List shoes={shoes} />
               </div>
-              <button>더보기</button>
+              <button onClick={()=>{
+                 //url로 get요청
+                axios.get(`https://gimnayoung.github.io/shop-server/shop${count}.json`)
+                 //성공했을때
+                  .then((response)=>{
+                  console.log(response.data)
+                  //복사본 만들기
+                  let copy=[...shoes,...response.data];
+                  setShoes(copy);
+                  setCount(count+1)
+                  console.log(count)
+                  console.log(copy) //합쳐진 arr
+                })
+                //실패했을때
+                .catch(()=>{
+                  console.log('err');
+                  alert('err');
+                })  
+              }}>버튼</button>
             </>
           }
         ></Route>
-        <Route path="/detail">
-          <Route path="0" element={<Detail id={0} />}></Route>
-          <Route path="1" element={<Detail id={1} />}></Route>
-          <Route path="2" element={<Detail id={2} />}></Route>
+        <Route path="/detail/:id" element={<Detail shoes={shoes} />}>
+          {/* <Route path="1" element={<Detail id={1} />}></Route>
+          <Route path="2" element={<Detail id={2} />}></Route> */}
         </Route>
         <Route path="/login" element={<div>로그인페이지</div>}></Route>
         <Route path="*" element={<div>에러페이지</div>}></Route>
@@ -53,14 +72,6 @@ function App() {
         {/* //test */}
         <Route path="/test" element={<Boom />}></Route>
       </Routes>
-      {/* <div>
-        <Nav/>
-      </div>
-      <MainBG/>
-      <h2>오늘은 이 상품 어때요 ?</h2>
-      <div >
-        <List/>
-      </div> */}
       {/* <Footer/> */}
     </div>
   );

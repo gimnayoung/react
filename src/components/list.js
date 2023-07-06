@@ -1,23 +1,18 @@
 import { useState } from "react";
-import { Route, Routes, Link, useNavigate, Outlet } from "react-router-dom";
-import axios from "axios";
+import { Route, Routes, Link, useNavigate, Outlet, useParams } from "react-router-dom";
 
-import Data from "../data/data.json";
 
 function List(props) {
   const navigate = useNavigate();
-  const [shoes,setShoes] = useState(Data);
-  const [serverdata,setServerdata]=useState([])
   const [count,setCount]=useState(1);
-  // console.log(props); //{id:1}
-
-  console.log(serverdata);
+ let {i}=useParams();
+  // console.log(serverdata);
   return (
     <div className="wrap">
       <div className="listWrap">
-        {shoes.map((list) => (
+        {props.shoes.map((list,i) => (
           <div className="list">
-            <a onClick={() => navigate(`/detail/${list.id}`)}>
+            <a onClick={() => navigate(`/detail/${props.shoes}`)}>
               <div className="imgBox">
                 <img className="img" src={list.img} />
                 <a className="icon">❤</a>
@@ -30,10 +25,11 @@ function List(props) {
               </div>
             </a>
           </div>
-        ))}
+        ))
+        }
       </div>
-      <button onClick={()=>{
-        //url로 get요청하는방법
+      {/* <button onClick={()=>{
+        //url로 get요청
         axios.get(`https://gimnayoung.github.io/shop-server/shop${count}.json`)
         //성공했을때
         .then((response)=>{
@@ -50,7 +46,7 @@ function List(props) {
           console.log('err');
           alert('err');
         })
-      }}>버튼</button>
+      }}>버튼</button> */}
     </div>
   );
 }
