@@ -15,8 +15,8 @@ import Boom from "./components/boom";
 function App() {
   // console.log(shoes);
   let navigate = useNavigate();
-  const [shoes,setShoes] = useState(Data);
-  const [count,setCount]=useState(1);
+  const [shoes, setShoes] = useState(Data);
+  const [count, setCount] = useState(1);
 
   return (
     <div>
@@ -34,25 +34,32 @@ function App() {
               <div>
                 <List shoes={shoes} />
               </div>
-              <button onClick={()=>{
-                 //url로 get요청
-                axios.get(`https://gimnayoung.github.io/shop-server/shop${count}.json`)
-                 //성공했을때
-                  .then((response)=>{
-                  console.log(response.data)
-                  //복사본 만들기
-                  let copy=[...shoes,...response.data];
-                  setShoes(copy);
-                  setCount(count+1)
-                  console.log(count)
-                  console.log(copy) //합쳐진 arr
-                })
-                //실패했을때
-                .catch(()=>{
-                  console.log('err');
-                  alert('err');
-                })  
-              }}>버튼</button>
+              <button
+                onClick={() => {
+                  //url로 get요청
+                  axios
+                    .get(
+                      `https://gimnayoung.github.io/shop-server/shop${count}.json`
+                    )
+                    //성공했을때
+                    .then((response) => {
+                      console.log(response.data);
+                      //복사본 만들기
+                      let copy = [...shoes, ...response.data];
+                      setShoes(copy);
+                      setCount(count + 1);
+                      console.log(count);
+                      console.log(copy); //합쳐진 arr
+                    })
+                    //실패했을때
+                    .catch(() => {
+                      console.log("err");
+                      alert("err");
+                    });
+                }}
+              >
+                버튼
+              </button>
             </>
           }
         ></Route>
