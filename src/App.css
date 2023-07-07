@@ -153,6 +153,14 @@ li {
 .detail-img img {
   width: 100%;
 }
+.detail-tap{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.detailbutton{
+  padding: 16px 120px;
+  border: 1px green solid;
+}
 .right p {
   font-size: 16px;
 }
@@ -203,4 +211,7 @@ div .coupon {
   width: 200px;
   background-position: center;
   background-size: 100%;
+}
+.click{
+  background-color: yellow;
 }
