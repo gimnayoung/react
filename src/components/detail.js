@@ -1,6 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import {BiHomeAlt} from "react-icons/bi";
+import {PiBasketLight} from "react-icons/pi";
+import {FiHeart} from "react-icons/fi";
+
 function Detail(props) {
   const [alert, setAlert] = useState(true);
   const [tap,setTap]=useState(0);
@@ -32,11 +36,22 @@ function Detail(props) {
           <img src={props.shoes[id].img} />
         </div>
         <div className="right">
-          <p>{props.shoes[id].source}</p>
-          <h4>{props.shoes[id].title}</h4>
-          <p>{props.shoes[id].content}</p>
-          <h1>{props.shoes[id].price}원</h1>
-          <button className="button">주문하기</button>
+          <div className="sourceBox">
+            <BiHomeAlt size={24}/>
+            <p>{props.shoes[id].source}</p>
+          </div>
+          <div className="titleBox">
+            <h4>{props.shoes[id].title}</h4>
+            <p>{props.shoes[id].content}</p>
+          </div>
+          <h1 className="detailPrice">{props.shoes[id].price}원</h1>
+          <input placeholder="컬러를 선택하세요"></input>
+          <input placeholder="사이즈를 선택하세요"></input>
+          <div className="buttonBox">
+           <button className="button-submit">주문하기</button>
+           <button className="button-장바"><PiBasketLight size={23}/></button>
+           <button className="button-찜"><FiHeart size={23}/></button>
+          </div>
         </div>
       </div>
       <div className="detail-tap">
