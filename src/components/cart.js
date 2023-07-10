@@ -13,7 +13,7 @@ function Cart() {
       <table>
         <thead>
           <tr>
-            <th>체크란</th>
+            <th>id</th>
             <th>상품정보</th>
             <th>옵션</th>
             <th>상품금액</th>
@@ -23,12 +23,16 @@ function Cart() {
           {cartlist.map((list, index) => (
             <tr>
               <th>{cartlist[index].id}</th>
-              <th>{cartlist[index].name}</th>
               <th>
+                {cartlist[index].img}
+                {cartlist[index].title}
+              </th>
+              <th>
+                {cartlist[index].count}
                 <button>+</button>
                 <button>-</button>
               </th>
-              <th>{cartlist[index].id}</th>
+              <th>{cartlist[index].price}</th>
             </tr>
           ))}
         </tbody>

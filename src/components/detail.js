@@ -1,6 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
+import { addItem } from "../store/store";
+import Cart from "./cart";
+
+//아이콘
 import { BiHomeAlt } from "react-icons/bi";
 import { PiBasketLight } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
@@ -9,6 +14,11 @@ function Detail(props) {
   const [alert, setAlert] = useState(true);
   const [tap, setTap] = useState(0);
   const [color, setColor] = useState("");
+
+  //찾은상품
+  // const findItem= props.shoes.find(x=>x.id==id);
+
+  let dispatch=useDispatch();
 
   const clolrHandling = (e) => {
     setColor(() => {
@@ -45,10 +55,17 @@ function Detail(props) {
             <p>{props.shoes[id].content}</p>
           </div>
           <h1 className="detailPrice">{props.shoes[id].price}원</h1>
-          <input placeholder="컬러를 선택하세요"></input>
+          <label for="color" placeholder="컬러를 선택하세요">컬러를 선택하세요</label>
+          <select id="color" size="3" multiple>
+            <option>아이보리</option>
+            <option>검정</option>
+            <option>흰색</option>
+          </select>
           <input placeholder="사이즈를 선택하세요"></input>
           <div className="buttonBox">
-            <a className="button-submitA">
+            <a className="button-submitA" onClick={()=>{
+              dispatch(addItem( { id:props.shoes[id].id,title:props.shoes[id].title,img:"",count:1,price:props.shoes[id].price}))
+            }}>
               <button className="button-submit">주문하기</button>
             </a>
             <a>
@@ -119,6 +136,9 @@ function Detail(props) {
                 <input type="radio" id="menu-4" name="tap" />
               </label>
             </button>
+          </div>
+          <div>
+            <Cart/>
           </div>
           <div className="tapbox">
             <TapCont tap={tap}></TapCont>
