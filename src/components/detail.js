@@ -11,9 +11,51 @@ import { PiBasketLight } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 
 function Detail(props) {
+  // useEffect(()=>{
+  //   let 꺼낸거 = localStorage.getItem("id")
+  //   꺼낸거=JSON.parse(꺼낸거)
+  //   꺼낸거.push((props.shoes[id].id))
+
+  //   꺼낸거=new Set(꺼낸거)
+  //   꺼낸거=Array.from(꺼낸거)
+  //   localStorage.setItem("id",JSON.stringify(꺼낸거))
+  //   console.log(꺼낸거)
+  // })
+  // useEffect(()=>{
+  //   let 꺼내= localStorage.getItem("title")
+  //   setLocalStorage([...uselocalStorage,꺼내])
+  //   console.log(uselocalStorage) //['빈티지']
+  //   localStorage.setItem('title',JSON.stringify(uselocalStorage))
+  //   let 다시꺼내 = localStorage.getItem("title")
+  //   console.log(다시꺼내)
+    
+  // },[])
+  //최근본 상품
+  // useEffect(()=>{
+  //   let 꺼냄 = localStorage.getItem('title')
+  //   꺼냄=JSON.stringify(꺼냄)
+  //   꺼냄.push(찾은상품.title)
+  //   localStorage.setItem('title',JSON.stringify(꺼냄))
+  // })
+  const localHandling=function(){
+    // let 꺼내= sessionStorage.getItem("title")
+    // setLocalStorage([...uselocalStorage,props.shoes[id].title])
+    // console.log(uselocalStorage) //['빈티지']
+    // sessionStorage.setItem('title',JSON.stringify(uselocalStorage))
+    // let 다시꺼내 = sessionStorage.getItem("title")
+    // console.log(다시꺼내)
+    // dispatch(addItem( { id:props.shoes[id].id,title:props.shoes[id].title,img:"",count:1,price:props.shoes[id].price}))
+    let 꺼냄 = localStorage.getItem('title')
+    꺼냄=JSON.parse(꺼냄)
+    // setLocalStorage([...uselocalStorage,...꺼냄])
+    꺼냄.push(찾은상품.title)
+    localStorage.setItem('title',JSON.stringify(꺼냄))
+    // console.log(uselocalStorage);
+  }
   const [alert, setAlert] = useState(true);
   const [tap, setTap] = useState(0);
   const [color, setColor] = useState("");
+  const [uselocalStorage,setLocalStorage]=useState([]);
 
   //찾은상품
   // const findItem= props.shoes.find(x=>x.id==id);
@@ -30,6 +72,7 @@ function Detail(props) {
   // },[tap])
   // const [count, setCount] = useState(0);
   let { id } = useParams();
+  let 찾은상품=props.shoes.find(x=>x.id==id)
   // detail 처음 장착됐을때,업데이트될때 실행
   // useEffect(() => {
   //   setTimeout(() => {
@@ -64,7 +107,8 @@ function Detail(props) {
           <input placeholder="사이즈를 선택하세요"></input>
           <div className="buttonBox">
             <a className="button-submitA" onClick={()=>{
-              dispatch(addItem( { id:props.shoes[id].id,title:props.shoes[id].title,img:"",count:1,price:props.shoes[id].price}))
+              localHandling()
+              // localStoragse.setItem("title",JSON.stringify([props.shoes[id].title]))
             }}>
               <button className="button-submit">주문하기</button>
             </a>

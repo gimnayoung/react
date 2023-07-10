@@ -34,33 +34,33 @@
     {
       "id" : 4,
       "source":"쿠로젯",
-      "title" : "",
-      "content" : "Born in the States",
+      "title" : "와이드핏 바지",
+      "content" : "와이드 조거 바스락 재질 팬츠",
       "img":"https://kooloset.kr/web/product/big/202209/b22672ca2a131a2e4a34246ca6cd2093.jpg",
-      "price" : 130000
+      "price" : "19,500"
     },
     {
       "id" : 5,
       "source":"슈마루",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
+      "title" : "레인부츠",
+      "content" : "굽3cm 장마템 레인부츠",
       "img":"https://www.shoemaru.com/shopimages/half1031/038006000026.jpg",
-      "price" : 130000
+      "price" : "39,000"
     },
     {
       "id" : 6,
       "source":"리햅",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
+      "title" : "모터 크로스백",
+      "content" : "한정특가 미니 모터 크로스백",
       "img":"https://image.auction.co.kr/itemimage/25/fd/73/25fd73dfc1.jpg",
-      "price" : 130000
+      "price" : "39,000"
     },
     {
       "id" : 7,
       "source":"로디엠",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
+      "title" : "꾸안꾸 슬리퍼",
+      "content" : "굽5cm 통굽 쿠션좋은 슬리퍼",
       "img":"https://m.lodim.kr/web/product/extra/small/202207/e600477bfc87d596dc994de067c5d9b2.png",
-      "price" : 130000
+      "price" : "29,000"
     }
 ]
