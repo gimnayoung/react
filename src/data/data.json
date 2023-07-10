@@ -2,34 +2,34 @@
     {
       "id" : 0,
       "source":"키미스",
-      "title" : "White and Black",
-      "content" : "Born in France",
+      "title" : "빈티지 블랙 원피스",
+      "content" : "H라인 빈티지 원피스 핏 완전 예쁨",
       "img":"https://d3ha2047wt6x28.cloudfront.net/WD7Xs7AXUvU/pr:NEW_GOODS_THUMB_WEBP/czM6Ly9hYmx5LWltYWdlLWxlZ2FjeS9kYXRhL2dvb2RzL2Q0YTZiNzQ2NTViMjAwNTUyNzU1OWY2YmZkYjgwZjljLmpwZw",
-      "price" : 120000
+      "price" : "45,000"
     },
     {
       "id" : 1,
       "source":"기프티박스",
-      "title" : "Red Knit",
-      "content" : "Born in Seoul",
+      "title" : "데님 워싱 바지",
+      "content" : "워싱이 예쁘게 들어간 바지",
       "img":"https://gifteabox.com/web/product/tiny/202301/4face0851a38f6564d109d58c74070d5.jpg",
-      "price" : 110000
+      "price" : "37,000"
     },
     {
       "id" : 2,
       "source":"엘루아",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
+      "title" : "언발란스 오프숄더",
+      "content" : "언발란스한 흰색 오프숄더 강추",
       "img":"https://cf.product-image.s.zigzag.kr/original/d/2023/6/14/24413_202306141451060343_41516.jpg?width=1080&height=1080&quality=80&format=jpeg",
-      "price" : 130000
+      "price" : "17,000"
     },
     {
       "id" : 3,
       "source":"슈가파우더",
-      "title" : "Grey Yordan",
-      "content" : "Born in the States",
+      "title" : "데일리 셔츠",
+      "content" : "아방핏 짧은기장 데일리로 좋은 셔츠",
       "img":"https://m.sugarpowder.kr/web/upload/NNEditor/20230201/d389f0e8388e0149ce46f7137351dd2b.jpg",
-      "price" : 130000
+      "price" : "18,000"
     },
     {
       "id" : 4,
