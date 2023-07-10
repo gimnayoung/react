@@ -11,6 +11,9 @@ import Detail from "./components/detail";
 import Event from "./components/event";
 import Footer from "./components/footer";
 import Boom from "./components/boom";
+import Cart from "./components/cart";
+import PPL1 from "./components/ppl1";
+import PPL2 from "./components/ppl2";
 
 function App() {
   // console.log(shoes);
@@ -35,6 +38,7 @@ function App() {
                 <List shoes={shoes} />
               </div>
               <button
+                className="mainlistbut"
                 onClick={() => {
                   //url로 get요청
                   axios
@@ -60,6 +64,14 @@ function App() {
               >
                 버튼
               </button>
+              <div className="pplbox">
+                <div className="ppl1box">
+                  <PPL1 />
+                </div>
+                <div className="ppl1box">
+                  <PPL2 />
+                </div>
+              </div>
             </>
           }
         ></Route>
@@ -72,12 +84,20 @@ function App() {
         <Route path="/event" element={<Event />}>
           <Route
             path="one"
-            element={<div>첫 주문시 양배추즙 서비스</div>}
+            element={<div>첫 주문시 양배추즙 서비스t</div>}
           ></Route>
           <Route path="two" element={<div>생일기념 쿠폰받기</div>}></Route>
         </Route>
         {/* //test */}
-        <Route path="/test" element={<Boom />}></Route>
+        <Route
+          path="/test"
+          element={
+            <>
+              <Boom />
+              <Cart />
+            </>
+          }
+        ></Route>
       </Routes>
       {/* <Footer/> */}
     </div>

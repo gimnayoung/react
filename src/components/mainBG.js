@@ -1,3 +1,4 @@
+import Main from "../img/main.png";
 import Main1 from "../img/main1.jpg";
 import Main2 from "../img/main2.jpg";
 import Main3 from "../img/main3.jpg";
@@ -16,7 +17,7 @@ function MainBG() {
             <li className="mainBg-li">
               <a>
                 <label for="slide04" className="leftslide"></label>
-                <img src={Main1} />
+                <img src={Main} />
                 <label for="slide02" className="rightslide"></label>
               </a>
             </li>
