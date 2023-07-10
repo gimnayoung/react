@@ -11,6 +11,7 @@ import { PiBasketLight } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 
 function Detail(props) {
+  // window.localStorage.setItem("title", JSON.stringify([uselocalStorage]));
   // useEffect(()=>{
   //   let 꺼낸거 = localStorage.getItem("id")
   //   꺼낸거=JSON.parse(꺼낸거)
@@ -28,7 +29,7 @@ function Detail(props) {
   //   localStorage.setItem('title',JSON.stringify(uselocalStorage))
   //   let 다시꺼내 = localStorage.getItem("title")
   //   console.log(다시꺼내)
-    
+
   // },[])
   //최근본 상품
   // useEffect(()=>{
@@ -37,7 +38,7 @@ function Detail(props) {
   //   꺼냄.push(찾은상품.title)
   //   localStorage.setItem('title',JSON.stringify(꺼냄))
   // })
-  const localHandling=function(){
+  const localHandling = function () {
     // let 꺼내= sessionStorage.getItem("title")
     // setLocalStorage([...uselocalStorage,props.shoes[id].title])
     // console.log(uselocalStorage) //['빈티지']
@@ -45,22 +46,25 @@ function Detail(props) {
     // let 다시꺼내 = sessionStorage.getItem("title")
     // console.log(다시꺼내)
     // dispatch(addItem( { id:props.shoes[id].id,title:props.shoes[id].title,img:"",count:1,price:props.shoes[id].price}))
-    let 꺼냄 = localStorage.getItem('title')
-    꺼냄=JSON.parse(꺼냄)
+    let 꺼냄 = localStorage.getItem("title", JSON.stringify([찾은상품.title])); //안녕
+    // 꺼냄 = JSON.stringify(꺼냄);
+    console.log(꺼냄);
+    setLocalStorage([...uselocalStorage, 꺼냄]);
+    console.log(uselocalStorage);
     // setLocalStorage([...uselocalStorage,...꺼냄])
-    꺼냄.push(찾은상품.title)
-    localStorage.setItem('title',JSON.stringify(꺼냄))
+    // 꺼냄.push(찾은상품.title);
+    // localStorage.setItem("title", JSON.stringify(꺼냄));
     // console.log(uselocalStorage);
-  }
+  };
   const [alert, setAlert] = useState(true);
   const [tap, setTap] = useState(0);
   const [color, setColor] = useState("");
-  const [uselocalStorage,setLocalStorage]=useState([]);
+  const [uselocalStorage, setLocalStorage] = useState([]);
 
   //찾은상품
   // const findItem= props.shoes.find(x=>x.id==id);
 
-  let dispatch=useDispatch();
+  let dispatch = useDispatch();
 
   const clolrHandling = (e) => {
     setColor(() => {
@@ -72,7 +76,7 @@ function Detail(props) {
   // },[tap])
   // const [count, setCount] = useState(0);
   let { id } = useParams();
-  let 찾은상품=props.shoes.find(x=>x.id==id)
+  let 찾은상품 = props.shoes.find((x) => x.id == id);
   // detail 처음 장착됐을때,업데이트될때 실행
   // useEffect(() => {
   //   setTimeout(() => {
@@ -98,7 +102,9 @@ function Detail(props) {
             <p>{props.shoes[id].content}</p>
           </div>
           <h1 className="detailPrice">{props.shoes[id].price}원</h1>
-          <label for="color" placeholder="컬러를 선택하세요">컬러를 선택하세요</label>
+          <label for="color" placeholder="컬러를 선택하세요">
+            컬러를 선택하세요
+          </label>
           <select id="color" size="3" multiple>
             <option>아이보리</option>
             <option>검정</option>
@@ -106,10 +112,13 @@ function Detail(props) {
           </select>
           <input placeholder="사이즈를 선택하세요"></input>
           <div className="buttonBox">
-            <a className="button-submitA" onClick={()=>{
-              localHandling()
-              // localStoragse.setItem("title",JSON.stringify([props.shoes[id].title]))
-            }}>
+            <a
+              className="button-submitA"
+              onClick={() => {
+                localHandling();
+                // localStoragse.setItem("title",JSON.stringify([props.shoes[id].title]))
+              }}
+            >
               <button className="button-submit">주문하기</button>
             </a>
             <a>
@@ -182,7 +191,7 @@ function Detail(props) {
             </button>
           </div>
           <div>
-            <Cart/>
+            <Cart />
           </div>
           <div className="tapbox">
             <TapCont tap={tap}></TapCont>
