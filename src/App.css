@@ -142,22 +142,6 @@ div .coupon {
   background-color: #f7f8fa;
 }
 
-/* mainBG Css */
-.mainBg input[id*="slide"] {
-  display: none;
-}
-.mainBg [id="slide01"]:checked ~ .slidewrap .mainBg-ul > li {
-  transform: translateX(0%);
-}
-.mainBg [id="slide02"]:checked ~ .slidewrap .mainBg-ul > li {
-  transform: translateX(-100%);
-}
-.mainBg [id="slide03"]:checked ~ .slidewrap .mainBg-ul > li {
-  transform: translateX(-200%);
-}
-.mainBg [id="slide04"]:checked ~ .slidewrap .mainBg-ul > li {
-  transform: translateX(-300%);
-}
 .slidewrap {
   max-width: 1300px;
   margin: 0 auto;
@@ -192,14 +176,6 @@ div .coupon {
   padding: 50px;
   cursor: pointer;
   border: 1px red solid;
-}
-.leftslide {
-  left: 30px;
-  background: url("./img/left.png") center center / 100% no-repeat;
-}
-.rightslide {
-  right: 30px;
-  background: url("./img/left.png") center center / 100% no-repeat;
 }
 
 /* PPL Css */
