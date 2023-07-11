@@ -28,7 +28,7 @@ function Cart() {
                   {list.count}
                   <button>+</button>
                 </div>
-                <div>{list.price}</div>
+                <div>{list.price}원</div>
                 <div>삭제버튼</div>
               </div>
            </div>
