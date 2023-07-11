@@ -38,6 +38,7 @@ function App() {
               <div>
                 <List shoes={shoes} />
               </div>
+              <div className="mainlistbutbox">
               <button
                 className="mainlistbut"
                 onClick={() => {
@@ -63,8 +64,10 @@ function App() {
                     });
                 }}
               >
-                버튼
+                상품 더보기
               </button>
+              </div>
+              <h1>지금 뜨고 있는 혜택</h1>
               <div className="pplbox">
                 <div className="ppl1box">
                   <PPL1 />
@@ -82,7 +85,7 @@ function App() {
         </Route>
         <Route path="/login" element={<div>로그인페이지</div>}></Route>
         <Route path="*" element={<div>에러페이지</div>}></Route>
-        <Route path="/mypage" element={<><Recently/><Cart/></>}></Route>
+        <Route path="/mypage" element={<><Cart/><Recently/></>}></Route>
         <Route path="/event" element={<Event />}>
           <Route
             path="one"
