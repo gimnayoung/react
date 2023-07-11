@@ -9,7 +9,7 @@ h1 {
   margin: auto;
   text-align: left;
   padding: 24px 4px;
-  border: 1px;
+  border: 1px solid;
 }
 .mainlistbut {
   background-color: rgb(240, 239, 239);
