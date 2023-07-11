@@ -26,7 +26,7 @@ function List(props) {
               <div className="productBox">
                 <p className="shopname">{list.source}</p>
                 <h4>{list.title}</h4>
-                <p>{list.content}</p>
+                <p className="listcontent">{list.content}</p>
                 <h3>{list.price}원</h3>
               </div>
             </a>

@@ -42,6 +42,32 @@ function Detail(props) {
     localStorage.setItem('watchedUser',JSON.stringify(filteredArr))
     // console.log(myArr);
   }
+  const cartItem=function(){
+    var userArr=localStorage.getItem('cartItem');
+    if(userArr===null){
+      userArr=[];
+    }else{
+      userArr=JSON.parse(userArr)
+    }
+    userArr.push(
+      { "id":찾은상품.id,
+        "title":찾은상품.title,
+        "img":찾은상품.img,
+        "count":1,
+        "price":찾은상품.price,
+        "content":찾은상품.content
+      },
+    )
+    const filteredArr = userArr.reduce((acc, current) => {
+      const x = acc.find(item => item.id === current.id);
+      if (!x) {
+        return acc.concat([current]);
+      } else {
+        return acc;
+      }
+    }, []);
+    localStorage.setItem('cartItem',JSON.stringify(filteredArr))
+  }
   // window.localStorage.setItem("title", JSON.stringify([uselocalStorage]));
   // useEffect(()=>{
   //   let 꺼낸거 = localStorage.getItem("id")
@@ -91,9 +117,6 @@ function Detail(props) {
   const [tap, setTap] = useState(0);
   const [color, setColor] = useState("");
   const [uselocalStorage, setLocalStorage] = useState([]);
-
-  //찾은상품
-  // const findItem= props.shoes.find(x=>x.id==id);
 
   let dispatch = useDispatch();
 
@@ -146,6 +169,7 @@ function Detail(props) {
             <a
               className="button-submitA"
               onClick={() => {
+                cartItem();
                 // localHandling();
                 // localStoragse.setItem("title",JSON.stringify([props.shoes[id].title]))
               }}
@@ -220,9 +244,6 @@ function Detail(props) {
                 <input type="radio" id="menu-4" name="tap" />
               </label>
             </button>
-          </div>
-          <div>
-            <Cart />
           </div>
           <div className="tapbox">
             <TapCont tap={tap}></TapCont>
