@@ -117,6 +117,7 @@ function Detail(props) {
   const [tap, setTap] = useState(0);
   const [color, setColor] = useState("");
   const [uselocalStorage, setLocalStorage] = useState([]);
+  const [heart,setHeart]=useState(0);
 
   let dispatch = useDispatch();
 
@@ -141,7 +142,7 @@ function Detail(props) {
 
   return (
     <div>
-      {alert === true ? <div className="boom">2초이내 구매시 할인</div> : null}
+      {/* {alert === true ? <div className="boom">2초이내 구매시 할인</div> : null} */}
       <div className="detail-wrap">
         <div className="detail-img">
           <img src={props.shoes[id].img} />
@@ -182,8 +183,12 @@ function Detail(props) {
               </button>
             </a>
             <a>
-              <button className="button-찜">
-                <FiHeart size={23} />
+              <button onClick={()=>{
+                setHeart(heart+1)
+              }} className="button-찜">
+                { 
+                heart%2==1 ? <div> ❤</div> : <FiHeart size={23} />
+              }
               </button>
             </a>
           </div>
