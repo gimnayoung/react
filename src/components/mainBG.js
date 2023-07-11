@@ -7,7 +7,7 @@ import Main4 from "../img/main4.jpg";
 function MainBG() {
   return (
     <div>
-      <div className="mainBg">
+      {/* <div className="mainBg">
         <div className="slidewrap">
           <ul className="mainBg-ul">
             <li className="mainBg-li">
@@ -40,7 +40,7 @@ function MainBG() {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
