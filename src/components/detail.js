@@ -11,6 +11,63 @@ import { PiBasketLight } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 
 function Detail(props) {
+  //최근 본 상품
+  useEffect(()=>{
+    watchedUser();
+  },[])
+  const watchedUser=function(){
+    var myArr = localStorage.getItem('watchedUser');
+    if(myArr===null){
+      myArr =[];
+    }else{
+      myArr=JSON.parse(myArr);
+    }
+    myArr.push(
+      {"id":찾은상품.id,
+      "title":찾은상품.title,
+      "img":찾은상품.img,
+      "price":찾은상품.price},
+    )
+    //중복방지 코드
+    // myArr=new Set(myArr);
+    // myArr = [...myArr];
+    const filteredArr = myArr.reduce((acc, current) => {
+      const x = acc.find(item => item.id === current.id);
+      if (!x) {
+        return acc.concat([current]);
+      } else {
+        return acc;
+      }
+    }, []);
+    localStorage.setItem('watchedUser',JSON.stringify(filteredArr))
+    // console.log(myArr);
+  }
+  const cartItem=function(){
+    var userArr=localStorage.getItem('cartItem');
+    if(userArr===null){
+      userArr=[];
+    }else{
+      userArr=JSON.parse(userArr)
+    }
+    userArr.push(
+      { "id":찾은상품.id,
+        "title":찾은상품.title,
+        "img":찾은상품.img,
+        "count":1,
+        "price":찾은상품.price,
+        "content":찾은상품.content
+      },
+    )
+    const filteredArr = userArr.reduce((acc, current) => {
+      const x = acc.find(item => item.id === current.id);
+      if (!x) {
+        return acc.concat([current]);
+      } else {
+        return acc;
+      }
+    }, []);
+    localStorage.setItem('cartItem',JSON.stringify(filteredArr))
+  }
   // window.localStorage.setItem("title", JSON.stringify([uselocalStorage]));
   // useEffect(()=>{
   //   let 꺼낸거 = localStorage.getItem("id")
@@ -38,7 +95,7 @@ function Detail(props) {
   //   꺼냄.push(찾은상품.title)
   //   localStorage.setItem('title',JSON.stringify(꺼냄))
   // })
-  const localHandling = function () {
+  // const localHandling = function () {
     // let 꺼내= sessionStorage.getItem("title")
     // setLocalStorage([...uselocalStorage,props.shoes[id].title])
     // console.log(uselocalStorage) //['빈티지']
@@ -46,23 +103,20 @@ function Detail(props) {
     // let 다시꺼내 = sessionStorage.getItem("title")
     // console.log(다시꺼내)
     // dispatch(addItem( { id:props.shoes[id].id,title:props.shoes[id].title,img:"",count:1,price:props.shoes[id].price}))
-    let 꺼냄 = localStorage.getItem("title", JSON.stringify([찾은상품.title])); //안녕
+    // let 꺼냄 = localStorage.getItem("title", JSON.stringify([찾은상품.title])); //안녕
     // 꺼냄 = JSON.stringify(꺼냄);
-    console.log(꺼냄);
-    setLocalStorage([...uselocalStorage, 꺼냄]);
-    console.log(uselocalStorage);
+    // console.log(꺼냄);
+    // setLocalStorage([...uselocalStorage, 꺼냄]);
+    // console.log(uselocalStorage);
     // setLocalStorage([...uselocalStorage,...꺼냄])
     // 꺼냄.push(찾은상품.title);
     // localStorage.setItem("title", JSON.stringify(꺼냄));
     // console.log(uselocalStorage);
-  };
+  // };
   const [alert, setAlert] = useState(true);
   const [tap, setTap] = useState(0);
   const [color, setColor] = useState("");
   const [uselocalStorage, setLocalStorage] = useState([]);
-
-  //찾은상품
-  // const findItem= props.shoes.find(x=>x.id==id);
 
   let dispatch = useDispatch();
 
@@ -115,7 +169,8 @@ function Detail(props) {
             <a
               className="button-submitA"
               onClick={() => {
-                localHandling();
+                cartItem();
+                // localHandling();
                 // localStoragse.setItem("title",JSON.stringify([props.shoes[id].title]))
               }}
             >
@@ -189,9 +244,6 @@ function Detail(props) {
                 <input type="radio" id="menu-4" name="tap" />
               </label>
             </button>
-          </div>
-          <div>
-            <Cart />
           </div>
           <div className="tapbox">
             <TapCont tap={tap}></TapCont>
