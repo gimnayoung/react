@@ -15,6 +15,7 @@ import Cart from "./components/cart";
 import PPL1 from "./components/ppl1";
 import PPL2 from "./components/ppl2";
 import Recently from "./components/recently";
+import Header from "./components/header";
 
 function App() {
   // console.log(shoes);
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div>
+      <Header/>
       <Routes>
         <Route
           path="/"

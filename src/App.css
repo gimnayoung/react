@@ -9,7 +9,6 @@ h1 {
   margin: auto;
   text-align: left;
   padding: 24px 4px;
-  border: 1px solid;
 }
 .mainlistbut {
   background-color: rgb(240, 239, 239);
@@ -319,4 +318,15 @@ text-overflow: ellipsis;
 }
 span.원{
   color: black;
+}
+/* header Css */
+.headerWrap{
+  width: 100%;
+  background-color: aqua;
+  margin-bottom: 20px;
+}
+.header{
+  max-width: 1300px;
+  margin: 0 auto;
+  border: 1px salmon solid;
 }
