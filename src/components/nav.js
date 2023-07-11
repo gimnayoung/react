@@ -11,8 +11,8 @@ function Nav(){
                 <a><li>혜택존</li></a>
                 <a><li>베스트</li></a>
                 <a><li>신상</li></a>
-                <a onClick={()=>{navigate('/mypage')}}><li>마이페이지</li></a>
-                <a onClick={()=>{navigate('/login')}}><li>로그인</li></a>
+                <a onClick={()=>{navigate('/mypage')}}><li>마이페이지/세일</li></a>
+                <a onClick={()=>{navigate('/login')}}><li>로그인/스토어</li></a>
             </ul>
         </div>
     </div>
