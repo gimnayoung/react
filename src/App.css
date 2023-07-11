@@ -92,16 +92,6 @@ a .icon {
   right: 10px;
   font-size: 25px;
 }
-.footerwrap {
-  background-color: #f7f8fa;
-  height: 150px;
-}
-.footer {
-  max-width: 1300px;
-  background-color: #f7f8fa;
-  margin: auto;
-  border: 1px royalblue solid;
-}
 span {
   color: rgb(232, 31, 31);
   font-weight: bolder;
@@ -229,14 +219,17 @@ div .coupon {
 .recently{
   overflow: hidden;
   padding: 12px;
-  border: 1px greenyellow solid;
-  height: 600px;
+  height: 300px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  overflow-y: scroll;
+}
+.recentlylistwrap{
+  border: 1px rgb(199, 201, 204) solid;
+  margin: 4px;
 }
 .recentlyImgBox{
-  border: 1px goldenrod solid;
   width: 220px;
   height: 200px;
   margin: 4px;
@@ -248,6 +241,15 @@ div .coupon {
 }
 .recentlycontent{
   padding: 4px 8px;
+}
+.recentlytitle{
+  font-size: 14px;
+  font-weight: bold;
+}
+.recentlyprice{
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(71, 71, 71);
 }
 /* Cart CSs */
 .cartlistwrap{
@@ -322,11 +324,78 @@ span.원{
 /* header Css */
 .headerWrap{
   width: 100%;
-  background-color: aqua;
+  height: 68px;
   margin-bottom: 20px;
+  
 }
 .header{
   max-width: 1300px;
+  height: 100%;
   margin: 0 auto;
-  border: 1px salmon solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.headerinputbox{
+  width: 400px;
+  display: flex;
+  border-bottom: 3px rgb(41, 41, 41) solid;
+}
+.headerinput{
+  width:400px;
+  height: 40px;
+  min-width: 250px;
+  padding-left: 12px;
+  border:none;
+  outline: none;
+}
+.headericonbox{
+  display: flex;
+  min-width: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerbut{
+  border: 0;
+  outline: 0;
+  background-color:white
+}
+/* footer css */
+.footerwrap {
+  background-color: #f7f8fa;
+  height: 400px;
+  margin-top: 20px;
+}
+.footer {
+  max-width: 1300px;
+  height:100%;
+  background-color: #f7f8fa;
+  margin: auto;
+  padding-top: 12px;
+  font-size: 14px;
+}
+.footerh3{
+  margin: 12px 0;
+}
+.footerTop{
+  display: flex;
+  width: 400px;
+  margin: 20px;
+  justify-content: space-between;
+}
+.footerMid{
+  margin: 20px;
+}
+.footerMid div{
+  margin:4px 0;
+}
+.footerbot{
+  margin: 20px;
+}
+.footerspan{
+  color: black;
+  font-size: 14px;
+}
+.footerbot div{
+  margin: 4px 0;
 }

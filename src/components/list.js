@@ -10,6 +10,7 @@ import {
 
 function List(props) {
   const navigate = useNavigate();
+  const [heart,setHeart]=useState(false);
   const [count, setCount] = useState(1);
   // let { i } = useParams();
   // console.log(serverdata);
@@ -21,7 +22,13 @@ function List(props) {
             <a onClick={() => navigate(`/detail/${i}`)}>
               <div className="imgBox">
                 <img className="img" src={list.img} />
-                <a className="icon">❤</a>
+                <a onClick={()=>{
+                  setHeart(true)
+                }} className="icon">
+                  {
+                   heart===true ? <div>❤</div> : <div>❤</div>
+                  }
+                </a>
               </div>
               <div className="productBox">
                 <p className="shopname">{list.source}</p>
