@@ -14,6 +14,7 @@ import Boom from "./components/boom";
 import Cart from "./components/cart";
 import PPL1 from "./components/ppl1";
 import PPL2 from "./components/ppl2";
+import Recently from "./components/recently";
 
 function App() {
   // console.log(shoes);
@@ -81,6 +82,7 @@ function App() {
         </Route>
         <Route path="/login" element={<div>로그인페이지</div>}></Route>
         <Route path="*" element={<div>에러페이지</div>}></Route>
+        <Route path="/mypage" element={<><Recently/><Cart/></>}></Route>
         <Route path="/event" element={<Event />}>
           <Route
             path="one"
