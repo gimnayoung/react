@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://github.com/gimnayoung/react/static/css/main.c67e33e3.css",
-    "main.js": "https://github.com/gimnayoung/react/static/js/main.0b1b1d54.js",
+    "main.js": "https://github.com/gimnayoung/react/static/js/main.0a3a9be9.js",
     "static/js/787.23170c61.chunk.js": "https://github.com/gimnayoung/react/static/js/787.23170c61.chunk.js",
     "static/media/main4.jpg": "https://github.com/gimnayoung/react/static/media/main4.00bb0099f6e564b13258.jpg",
     "static/media/main2.jpg": "https://github.com/gimnayoung/react/static/media/main2.454a1e947c1ccfa8cb14.jpg",
@@ -13,11 +13,11 @@
     "static/media/coupon.jpg": "https://github.com/gimnayoung/react/static/media/coupon.9ec05f24762e8a8052b6.jpg",
     "index.html": "https://github.com/gimnayoung/react/index.html",
     "main.c67e33e3.css.map": "https://github.com/gimnayoung/react/static/css/main.c67e33e3.css.map",
-    "main.0b1b1d54.js.map": "https://github.com/gimnayoung/react/static/js/main.0b1b1d54.js.map",
+    "main.0a3a9be9.js.map": "https://github.com/gimnayoung/react/static/js/main.0a3a9be9.js.map",
     "787.23170c61.chunk.js.map": "https://github.com/gimnayoung/react/static/js/787.23170c61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c67e33e3.css",
-    "static/js/main.0b1b1d54.js"
+    "static/js/main.0a3a9be9.js"
   ]
 }
