@@ -3,7 +3,6 @@ function Recently(){
     const newWatchedUser=JSON.parse(watchedUser)
  return(
     <div className="recentlywrap">
-        <h2>장바구니</h2>
         <h2>최근 본 상품</h2>
         <div className="recently">
             {newWatchedUser.slice(0).reverse().map((list,index)=>(

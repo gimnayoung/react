@@ -86,7 +86,6 @@ a .f-icon {
   font-size: 25px;
 }
 a .icon {
-  border: 3px red solid;
   position: absolute;
   bottom: 125px;
   right: 10px;
@@ -133,23 +132,37 @@ div .coupon {
   height: 300px;
 }
 /* detail Css*/
+select{
+  display: block;
+  width: 100%;
+  padding: 12px 12px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  border-radius: 8px;
+  outline: none;
+}
+div.titleBox h4{
+  margin-bottom: 8px;
+}
+div.titleBox p{
+  font-size: 20px;
+}
 .detail-wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   max-width: 1200px;
   min-width: 360px;
   margin: auto;
   padding: 4px;
-  border: 1px green solid;
+  /* border: 1px royalblue solid; */
 }
 .detail-img {
   position: relative;
   width: 500px;
   min-width: 360px;
   height: 500px;
-  border: 1px red solid;
   margin: 12px;
 }
 .detail-img img {
@@ -157,9 +170,8 @@ div .coupon {
   height: 100%;
 }
 .right {
-  padding: 4px;
-  width: 500px;
-  border: 1px lightcoral solid;
+  padding: 8px;
+  max-width: 500px;
   margin: 12px;
 }
 .sourceBox {
@@ -186,34 +198,92 @@ div .coupon {
   margin-bottom: 12px;
 }
 .detailPrice {
-  margin: 0;
+  color: rgb(55, 55, 55);
+  font-size: 28px;
 }
 .button-submitA {
-  width: 350px;
-  border: 1px red solid;
+  width: 355px;
+
 }
 .button-submit {
   /* padding: 16px 120px; */
-  font-size: 16px;
-  font-weight: bold;
-  width: 350px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(78, 77, 77);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 12px 48px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom: 3px solid rgba(0,0,0,0.21);
+    border-radius: 10px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    font-size: 20px;
+    font-weight: bolder;
+    min-width: 200px;
 }
 .button-장바 {
-  padding: 12px;
+  cursor: pointer;
   font-size: 16px;
+  background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 14px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom: 3px solid rgba(0,0,0,0.21);
+    border-radius: 10px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    font-weight: bolder;
+    min-width: 55px;
 }
 .button-찜 {
   padding: 12px;
   font-size: 16px;
+  background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 14px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom: 3px solid rgba(0,0,0,0.21);
+    border-radius: 10px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    min-width: 55px;
 }
 .buttonBox {
   display: flex;
   justify-content: space-evenly;
 }
+.detailfinalamount{
+  padding: 4px;
+  display: flex;
+  margin: 32px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.final{
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(55, 55, 55);
+} 
+.amount{
+  font-size: 30px;
+  color: rgb(225, 32, 32);
+  font-weight: bold;
 
+}
 /*  Recently css*/
+.recentlywrap h2{
+  margin-left: 12px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
 .recentlywrap{
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 .recently{
@@ -227,7 +297,7 @@ div .coupon {
 }
 .recentlylistwrap{
   border: 1px rgb(199, 201, 204) solid;
-  margin: 4px;
+  margin: 8px;
 }
 .recentlyImgBox{
   width: 220px;
@@ -252,10 +322,74 @@ div .coupon {
   color: rgb(71, 71, 71);
 }
 /* Cart CSs */
-.cartlistwrap{
+.cartwrap{
+  height: 500px;
   max-width: 1300px;
+  /* border: 3px green solid; */
+  overflow-x:hidden;
+  overflow-y: scroll;
+  margin: 0 auto;
+  margin-bottom: 44px;
+}
+.updownbut{
+  font-size: 14px;
+  background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 4px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom: 3px solid rgba(0,0,0,0.21);
+    border-radius: 6px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    font-weight: bolder;
+    min-width: 25px;
+}
+.cartsubmit{
+  margin-top: 4px;
+  font-size: 14px;
+  background-color: rgb(19, 19, 19);
+    text-decoration: none;
+    color: rgb(244, 241, 241);
+    padding: 4px 12px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom: 3px solid rgba(0,0,0,0.21);
+    border-radius: 10px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    font-weight: bolder;
+    min-width: 80px;
+}
+.cartwrap h2{
+  margin-left: 12px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.cartdelbut{
+  font-size: 14px;
+  background-color: rgb(19, 19, 19);
+    text-decoration: none;
+    color: rgb(244, 241, 241);
+    padding: 4px 8px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom: 3px solid rgba(0,0,0,0.21);
+    border-radius: 10px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    font-weight: bolder;
+    min-width: 50px;
+}
+.cartlistwrap{
+  padding: 10px;
+  /* text-align: center; */
+  margin:auto;
+  margin-bottom: 8px;
+  max-width: 1250px;
   height: 180px;
-  border: 1px palevioletred solid;
+  border: 1px rgb(199, 201, 204) solid;
 }
 .carttop{
   display: flex;
@@ -263,11 +397,41 @@ div .coupon {
 }
 .cartlist{
   display: flex;
-  justify-content: space-between;
-  
-  
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+}
+.cartsource{
+  margin-bottom: 4px;
+  font-size: 12px;
+  text-decoration-line: underline;
+}
+.cartprice{
+  font-size: 19px;
+  font-weight: bold;
+}
+.carttext{
+  padding-left: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+}
+.carttitlebox{
+  /* border: 1px rgb(78, 17, 175) solid; */
+  width: 500px;
+}
+.cartindex{
+  display: hide;
+}
+.carttitle{
+  margin-bottom: 12px;
+}
+.cartcontent{
+  font-size: 13px;
+  color: rgb(64, 64, 64);
 }
 .cartimgbox{
+  margin-right: 8px;
   position: relative;
   width: 160px;
   height: 150px;
@@ -325,7 +489,7 @@ span.원{
 .headerWrap{
   width: 100%;
   height: 68px;
-  margin-bottom: 20px;
+  margin-bottom: 34px;
   
 }
 .header{
