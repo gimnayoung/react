@@ -8,9 +8,10 @@ import {
   useParams,
 } from "react-router-dom";
 
+import {BsHeart} from "react-icons/bs"
 function List(props) {
   const navigate = useNavigate();
-  const [heart,setHeart]=useState(false);
+  const [heart,setHeart]=useState(1);
   const [count, setCount] = useState(1);
   // let { i } = useParams();
   // console.log(serverdata);
@@ -25,8 +26,8 @@ function List(props) {
                 <a onClick={()=>{
                   setHeart(true)
                 }} className="icon">
-                  {
-                   heart===true ? <div>❤</div> : <div>❤</div>
+                  { 
+                    heart%2==1 ? <div><BsHeart color="rgb(255, 31, 31)"/></div> : null
                   }
                 </a>
               </div>

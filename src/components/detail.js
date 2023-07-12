@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -9,6 +9,7 @@ import Cart from "./cart";
 import { BiHomeAlt } from "react-icons/bi";
 import { PiBasketLight } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
+import {BsHeart} from 'react-icons/bs'
 
 function Detail(props) {
   //최근 본 상품
@@ -23,7 +24,9 @@ function Detail(props) {
       myArr=JSON.parse(myArr);
     }
     myArr.push(
-      {"id":찾은상품.id,
+      {
+      "source":찾은상품.source,
+      "id":찾은상품.id,
       "title":찾은상품.title,
       "img":찾은상품.img,
       "price":찾은상품.price},
@@ -42,6 +45,7 @@ function Detail(props) {
     localStorage.setItem('watchedUser',JSON.stringify(filteredArr))
     // console.log(myArr);
   }
+
   const cartItem=function(){
     var userArr=localStorage.getItem('cartItem');
     if(userArr===null){
@@ -50,7 +54,9 @@ function Detail(props) {
       userArr=JSON.parse(userArr)
     }
     userArr.push(
-      { "id":찾은상품.id,
+      { 
+        "source":찾은상품.source,
+        "id":찾은상품.id,
         "title":찾은상품.title,
         "img":찾은상품.img,
         "count":1,
@@ -120,12 +126,9 @@ function Detail(props) {
   const [heart,setHeart]=useState(0);
 
   let dispatch = useDispatch();
+  let navigate=useNavigate();
 
-  const clolrHandling = (e) => {
-    setColor(() => {
-      return e.target.value;
-    });
-  };
+  const alertHandling = () => alert("안녕")
   // useEffect(()=>{
   //   setColor('click')
   // },[tap])
@@ -157,37 +160,43 @@ function Detail(props) {
             <p>{props.shoes[id].content}</p>
           </div>
           <h1 className="detailPrice">{props.shoes[id].price}원</h1>
-          <label for="color" placeholder="컬러를 선택하세요">
-            컬러를 선택하세요
-          </label>
-          <select id="color" size="3" multiple>
-            <option>아이보리</option>
-            <option>검정</option>
-            <option>흰색</option>
+          <select>
+            <option className="detailoption" value="" selected>[색상]를 선택하세요.</option>
+            <option className="detailoption" value="ibori">아이보리</option>
+            <option className="detailoption" value="black">블랙</option>
+            <option className="detailoption" value="white">화이트</option>
           </select>
-          <input placeholder="사이즈를 선택하세요"></input>
+          <select>
+            <option value="" selected>[사이즈]를 선택하세요.</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+          </select>
+          <div className="detailfinalamount">
+            <div className="final">총 상품 금액 </div>
+            <div className="amount"> {props.shoes[id].price} 원</div>
+          </div>
           <div className="buttonBox">
-            <a
-              className="button-submitA"
-              onClick={() => {
-                cartItem();
+            <a className="button-submitA"
                 // localHandling();
                 // localStoragse.setItem("title",JSON.stringify([props.shoes[id].title]))
-              }}
             >
               <button className="button-submit">주문하기</button>
             </a>
-            <a>
+            <a onClick={()=>{
+              cartItem();
+              navigate('/mypage')
+            }}>
               <button className="button-장바">
-                <PiBasketLight size={23} />
+                <PiBasketLight size={28} />
               </button>
             </a>
-            <a>
+            <a >
               <button onClick={()=>{
                 setHeart(heart+1)
               }} className="button-찜">
                 { 
-                heart%2==1 ? <div> ❤</div> : <FiHeart size={23} />
+                heart%2==1 ? <div><FiHeart size={28} color="red" /></div> : <FiHeart size={28} />
               }
               </button>
             </a>
