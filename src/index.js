@@ -12,7 +12,7 @@ root.render(
   //디버깅용 1번실행+1번실행
   // <React.StrictMode>
   <Provider store={Store}>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
   </Provider>
