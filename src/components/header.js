@@ -8,7 +8,11 @@ let navigate=useNavigate();
 return(
     <div className="headerWrap">
         <div className="header">
-            <div>로고자리</div>
+            <a onClick={()=>{navigate('/')}}>
+                <div>
+                로고자리
+                </div>
+            </a>
             <div className='headerinputbox'>
                 <input className='headerinput'></input>
                 <button className='headerbut'><BiSearch size={30}/></button>

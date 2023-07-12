@@ -204,9 +204,8 @@ function Detail(props) {
         </div>
       </div>
       <div className="detail-tap">
-        <div>
           <div className="detailbutton">
-            <button
+            <a className="detailA"
               value={0}
               type="button"
               onClick={() => {
@@ -214,57 +213,46 @@ function Detail(props) {
               }}
             >
               상품정보
-            </button>
+            </a>
           </div>
           <div className="detailbutton">
-            <button
+            <a className="detailA"
               value={1}
               type="button"
               onClick={() => {
                 setTap(1);
               }}
             >
-              <label for="menu-2">
-                {" "}
                 리뷰
-                <input type="radio" id="menu-2" name="tap" />
-              </label>
-            </button>
+            </a>
           </div>
           <div className="detailbutton">
-            <button
+            <a className="detailA"
               value={2}
               type="button"
               onClick={() => {
                 setTap(2);
               }}
             >
-              <label for="menu-3">
                 Q&A
-                <input type="radio" id="menu-3" name="tap" />
-              </label>
-            </button>
+            </a>
           </div>
           <div className="detailbutton">
-            <button
+            <a className="detailA"
               value={3}
               type="button"
               onClick={() => {
                 setTap(3);
               }}
             >
-              <label for="menu-4">
                 주문정보
-                <input type="radio" id="menu-4" name="tap" />
-              </label>
-            </button>
+            </a>
           </div>
           <div className="tapbox">
             <TapCont tap={tap}></TapCont>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
