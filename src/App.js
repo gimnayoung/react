@@ -16,6 +16,7 @@ import PPL1 from "./components/ppl1";
 import PPL2 from "./components/ppl2";
 import Recently from "./components/recently";
 import Header from "./components/header";
+import Login from "./components/login"
 
 function App() {
   // console.log(shoes);
@@ -85,7 +86,7 @@ function App() {
           {/* <Route path="1" element={<Detail id={1} />}></Route>
           <Route path="2" element={<Detail id={2} />}></Route> */}
         </Route>
-        <Route path="/login" element={<div>로그인페이지</div>}></Route>
+        <Route path="/login" element={<div><Login/></div>}></Route>
         <Route path="*" element={<div>에러페이지</div>}></Route>
         <Route path="/mypage" element={<><Cart/><Recently/></>}></Route>
         <Route path="/event" element={<Event />}>

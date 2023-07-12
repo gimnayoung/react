@@ -61,7 +61,6 @@ h1 {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  border: 1px green solid;
 }
 li {
   margin: 12px;
@@ -189,10 +188,22 @@ div.titleBox p{
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 60px;
 }
 .detailbutton {
-  padding: 16px 120px;
-  border: 1px green solid;
+  align-items: center;
+  align-content: center;
+  width: 300px;
+  height: 40px;
+  border-bottom: 3px gray solid;
+}
+.detailA{
+  font-weight: 700;
+  font-size: 20px;
+  padding: 4px 104px;
 }
 .titleBox {
   margin-bottom: 12px;
@@ -276,10 +287,12 @@ div.titleBox p{
   font-weight: bold;
 
 }
+.tapbox{
+  margin-top: 20px;
+}
 /*  Recently css*/
 .recentlywrap h2{
-  margin-left: 12px;
-  margin-bottom: 20px;
+  margin: 50px 0 20px 12px;
   font-size: 30px;
 }
 .recentlywrap{
@@ -322,10 +335,14 @@ div.titleBox p{
   color: rgb(71, 71, 71);
 }
 /* Cart CSs */
+.cartwrapwrap{
+  margin: auto;
+  max-width: 1400px;
+  border-bottom: 2px rgb(199, 201, 204) solid;
+}
 .cartwrap{
   height: 500px;
   max-width: 1300px;
-  /* border: 3px green solid; */
   overflow-x:hidden;
   overflow-y: scroll;
   margin: 0 auto;
@@ -472,10 +489,14 @@ div.titleBox p{
   transform: scale(1.1);
 }
 .listcontent{
+  margin-bottom: 4px;
   width: 260px;
-white-space: nowrap;
-overflow:hidden;
-text-overflow: ellipsis;
+  font-size: 13px;
+  color: rgb(65, 65, 65);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 .imgBox {
   width: 285px;
@@ -528,7 +549,7 @@ span.원{
 .footerwrap {
   background-color: #f7f8fa;
   height: 400px;
-  margin-top: 20px;
+  margin-top: 100px;
 }
 .footer {
   max-width: 1300px;
@@ -563,3 +584,4 @@ span.원{
 .footerbot div{
   margin: 4px 0;
 }
+

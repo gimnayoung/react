@@ -1,0 +1,75 @@
+/* login css
+div#wrap {
+    width: 300px; margin: 0 auto;
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 12px;
+    border-radius: 7px;
+    border:1px solid gray;
+    outline: none;
+  }
+  input#remember-check{
+    width: 16px;
+    margin-right: 4px;
+    cursor: pointer;
+    
+  }
+  input.loginBut{
+    background-color: #00a5b9;
+    color: aliceblue;
+    border: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  input.loginBut:hover{
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+  label{
+    color: gray;
+    font-size: 13px;
+    cursor: pointer;
+    
+  }
+  div.forgetBox{
+    display: flex;
+    justify-content: flex-end;
+    padding: 4px;
+  }
+  a{
+    text-decoration: none;
+    font-size: 12px;
+    color: gray;
+  }
+  a.forgetID{
+    margin-right: 10px;
+  }
+  button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 7px;
+    border: none;
+  }
+  div.signupBox{
+    border-top: solid 1px gray;
+  }
+  button.signupBut{
+    background-color: white;
+    color: #00a5b9;
+    border: 1px solid #00a5b9;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  button.signupBut:hover{
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  } */

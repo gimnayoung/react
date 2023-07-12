@@ -6,6 +6,7 @@ import { useState } from "react";
 function Cart() {
   //안에 요소 삭제해줌
   localStorage.removeItem("name");
+
   const cartItem=localStorage.getItem("cartItem")
   const newCartItem=JSON.parse(cartItem)
   const [count,setCount]=useState(newCartItem[0].count)
@@ -19,6 +20,7 @@ function Cart() {
   //스토어에서 만든 reducers안에있는거 사용할때
   let dispatch = useDispatch();
   return (
+    <div className="cartwrapwrap">
     <div className="cartwrap">
       <h2>장바구니</h2>
           {newCartItem.map((list, index) => (
@@ -48,6 +50,7 @@ function Cart() {
               </div>
            </div>
           ))}
+    </div>
     </div>
   );
 }
