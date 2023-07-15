@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, Link, useNavigate, Outlet } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  Link,
+  useNavigate,
+  Outlet,
+  BrowserRouter,
+  HashRouter,
+} from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 
@@ -16,7 +24,7 @@ import PPL1 from "./components/ppl1";
 import PPL2 from "./components/ppl2";
 import Recently from "./components/recently";
 import Header from "./components/header";
-import Login from "./components/login"
+import Login from "./components/login";
 
 function App() {
   // console.log(shoes);
@@ -26,7 +34,7 @@ function App() {
 
   return (
     <div>
-      <Header/>
+      <Header />
       <Routes>
         <Route
           path="/"
@@ -42,33 +50,33 @@ function App() {
                 <List shoes={shoes} />
               </div>
               <div className="mainlistbutbox">
-              <button
-                className="mainlistbut"
-                onClick={() => {
-                  //url로 get요청
-                  axios
-                    .get(
-                      `https://gimnayoung.github.io/shop-server/shop${count}.json`
-                    )
-                    //성공했을때
-                    .then((response) => {
-                      console.log(response.data);
-                      //복사본 만들기
-                      let copy = [...shoes, ...response.data];
-                      setShoes(copy);
-                      setCount(count + 1);
-                      console.log(count);
-                      console.log(copy); //합쳐진 arr
-                    })
-                    //실패했을때
-                    .catch(() => {
-                      console.log("err");
-                      alert("err");
-                    });
-                }}
-              >
-                상품 더보기
-              </button>
+                <button
+                  className="mainlistbut"
+                  onClick={() => {
+                    //url로 get요청
+                    axios
+                      .get(
+                        `https://gimnayoung.github.io/shop-server/shop${count}.json`
+                      )
+                      //성공했을때
+                      .then((response) => {
+                        console.log(response.data);
+                        //복사본 만들기
+                        let copy = [...shoes, ...response.data];
+                        setShoes(copy);
+                        setCount(count + 1);
+                        console.log(count);
+                        console.log(copy); //합쳐진 arr
+                      })
+                      //실패했을때
+                      .catch(() => {
+                        console.log("err");
+                        alert("err");
+                      });
+                  }}
+                >
+                  상품 더보기
+                </button>
               </div>
               <h1>지금 뜨고 있는 혜택</h1>
               <div className="pplbox">
@@ -86,9 +94,24 @@ function App() {
           {/* <Route path="1" element={<Detail id={1} />}></Route>
           <Route path="2" element={<Detail id={2} />}></Route> */}
         </Route>
-        <Route path="/login" element={<div><Login/></div>}></Route>
+        <Route
+          path="/login"
+          element={
+            <div>
+              <Login />
+            </div>
+          }
+        ></Route>
         <Route path="*" element={<div>에러페이지</div>}></Route>
-        <Route path="/mypage" element={<><Cart/><Recently/></>}></Route>
+        <Route
+          path="/mypage"
+          element={
+            <>
+              <Cart />
+              <Recently />
+            </>
+          }
+        ></Route>
         <Route path="/event" element={<Event />}>
           <Route
             path="one"
@@ -107,7 +130,7 @@ function App() {
           }
         ></Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
