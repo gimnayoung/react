@@ -606,10 +606,16 @@ span.원{
   margin: 12px auto;
 }
 .imglist{
+  /* position: relative;
+  left: 10px;
+  top: 10px; */
   max-width: 900px;
   height: 370px;
+  overflow: hidden;
 }
 .BGimg{
+  position: absolute;
   width: 100%;
   height: 100%;
+  opacity: 0.0;
 }
