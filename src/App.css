@@ -531,6 +531,15 @@ span.원{
   outline: 0;
   background-color:white
 }
+.mainlogoimgbox{
+ margin-top: 12px;
+ max-width: 200px;
+ height: 80px;
+}
+.mainlogoimg{
+  width: 100%;
+}
+
 /* footer css */
 .footerwrap {
   background-color: #f7f8fa;

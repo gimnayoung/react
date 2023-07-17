@@ -2,6 +2,7 @@ import {BiSearch} from 'react-icons/bi'
 import {BsPerson} from 'react-icons/bs'
 import {BsCart} from 'react-icons/bs'
 
+import Mainlogo from '../img/logo.png'
 import { useNavigate } from 'react-router-dom';
 function Header(){
 let navigate=useNavigate();
@@ -9,8 +10,8 @@ return(
     <div className="headerWrap">
         <div className="header">
             <a onClick={()=>{navigate('/')}}>
-                <div>
-                로고자리
+                <div className='mainlogoimgbox'>
+                 <img className='mainlogoimg' src={Mainlogo}></img>
                 </div>
             </a>
             <div className='headerinputbox'>
