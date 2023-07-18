@@ -10,6 +10,25 @@ h1 {
   text-align: left;
   padding: 24px 4px;
 }
+.smallcatagoriwrap{
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px red solid;
+}
+.smallcatagori{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.smallcatagori img{
+  width: 45px;
+  height: 45px;
+}
+.smallcatagori div{
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(61, 61, 61);
+}
 .mainlistbut {
   background-color: rgb(240, 239, 239);
     text-decoration: none;
