@@ -10,40 +10,39 @@ h1 {
   text-align: left;
   padding: 24px 4px;
 }
-.smallcatagoriwrap{
-  max-width: 1000px;
+.smallcatagoriwrap {
+  max-width: 1200px;
   margin: 0 auto;
-  border: 1px red solid;
 }
-.smallcatagori{
+.smallcatagori {
   text-align: center;
   display: flex;
   justify-content: space-between;
 }
-.smallcatagori img{
+.smallcatagori img {
   width: 45px;
   height: 45px;
 }
-.smallcatagori div{
+.smallcatagori div {
   font-size: 12px;
   font-weight: 700;
   color: rgb(61, 61, 61);
 }
 .mainlistbut {
   background-color: rgb(240, 239, 239);
-    text-decoration: none;
-    color: rgb(70, 69, 69);
-    padding: 12px 48px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom: 3px solid rgba(0,0,0,0.21);
-    border-radius: 20px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    font-size: 14px;
-    font-weight: bolder;
-    min-width: 300px;
-    cursor: pointer;
+  text-decoration: none;
+  color: rgb(70, 69, 69);
+  padding: 12px 48px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.21);
+  border-radius: 20px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  font-weight: bolder;
+  min-width: 300px;
+  cursor: pointer;
 }
 .main-ul {
   max-width: 1300px;
@@ -53,7 +52,7 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-.mainlistbutbox{
+.mainlistbutbox {
   width: 310px;
   margin: 40px auto;
 }
@@ -137,6 +136,7 @@ div .coupon {
 .ppl1 {
   width: 100%;
   position: relative;
+  height: 300px;
 }
 .ppl2 {
   width: 100%;
@@ -144,19 +144,24 @@ div .coupon {
   height: 300px;
 }
 /* detail Css*/
-select{
-  display: block;
+.selectBox {
+  /* width: 500px; */
+}
+select {
+  max-width: 500px;
+  min-white: 200px;
   width: 100%;
+  display: block;
   padding: 12px 12px;
   margin-bottom: 8px;
   font-size: 15px;
   border-radius: 8px;
   outline: none;
 }
-div.titleBox h4{
+div.titleBox h4 {
   margin-bottom: 8px;
 }
-div.titleBox p{
+div.titleBox p {
   font-size: 20px;
 }
 .detail-wrap {
@@ -165,16 +170,18 @@ div.titleBox p{
   flex-wrap: wrap;
   justify-content: start;
   max-width: 1200px;
-  min-width: 360px;
+  min-width: 330px;
   margin: auto;
   padding: 4px;
+  width: 100%;
+  margin-bottom: 100px;
   /* border: 1px royalblue solid; */
 }
 .detail-img {
   position: relative;
   width: 500px;
-  min-width: 360px;
-  height: 500px;
+  min-width: 310px;
+  height: 100%;
   margin: 12px;
 }
 .detail-img img {
@@ -204,7 +211,7 @@ div.titleBox p{
   flex-grow: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 .detailbutton {
   align-items: center;
@@ -213,7 +220,7 @@ div.titleBox p{
   height: 40px;
   border-bottom: 3px gray solid;
 }
-.detailA{
+.detailA {
   font-weight: 700;
   font-size: 20px;
   padding: 4px 104px;
@@ -227,92 +234,90 @@ div.titleBox p{
 }
 .button-submitA {
   width: 355px;
-
 }
 .button-submit {
   /* padding: 16px 120px; */
   width: 100%;
   height: 100%;
   background-color: rgb(78, 77, 77);
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    padding: 12px 48px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom: 3px solid rgba(0,0,0,0.21);
-    border-radius: 10px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    font-size: 20px;
-    font-weight: bolder;
-    min-width: 200px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 12px 48px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.21);
+  border-radius: 10px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  font-size: 20px;
+  font-weight: bolder;
+  min-width: 200px;
 }
 .button-장바 {
   cursor: pointer;
   font-size: 16px;
   background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 10px 14px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom: 3px solid rgba(0,0,0,0.21);
-    border-radius: 10px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    font-weight: bolder;
-    min-width: 55px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 14px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.21);
+  border-radius: 10px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  font-weight: bolder;
+  min-width: 55px;
 }
 .button-찜 {
   padding: 12px;
   font-size: 16px;
   background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 10px 14px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom: 3px solid rgba(0,0,0,0.21);
-    border-radius: 10px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    min-width: 55px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 14px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.21);
+  border-radius: 10px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  min-width: 55px;
 }
 .buttonBox {
   display: flex;
   justify-content: space-evenly;
 }
-.detailfinalamount{
+.detailfinalamount {
   padding: 4px;
   display: flex;
   margin: 32px 0;
   justify-content: space-between;
   align-items: center;
 }
-.final{
+.final {
   font-size: 17px;
   font-weight: bold;
   color: rgb(55, 55, 55);
-} 
-.amount{
+}
+.amount {
   font-size: 30px;
   color: rgb(225, 32, 32);
   font-weight: bold;
-
 }
-.tapbox{
-  margin-top: 20px;
+.tapbox {
+  margin-top: 40px;
 }
 /*  Recently css*/
-.recentlywrap h2{
+.recentlywrap h2 {
   margin: 50px 0 20px 12px;
   font-size: 30px;
 }
-.recentlywrap{
+.recentlywrap {
   max-width: 1300px;
   margin: 0 auto;
 }
-.recently{
+.recently {
   overflow: hidden;
   padding: 12px;
   height: 300px;
@@ -321,157 +326,162 @@ div.titleBox p{
   flex-wrap: wrap;
   overflow-y: scroll;
 }
-.recentlylistwrap{
+.recentlylistwrap {
   border: 1px rgb(199, 201, 204) solid;
   margin: 8px;
 }
-.recentlyImgBox{
+.recentlyImgBox {
   width: 220px;
   height: 200px;
   margin: 4px;
 }
-.recentlyImg{
+.recentlyImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.recentlycontent{
+.recentlycontent {
   padding: 4px 8px;
 }
-.recentlytitle{
+.recentlytitle {
   font-size: 14px;
   font-weight: bold;
 }
-.recentlyprice{
+.recentlyprice {
   font-size: 13px;
   font-weight: bold;
   color: rgb(71, 71, 71);
 }
 /* Cart CSs */
-.cartwrapwrap{
+.cartwrapwrap {
   margin: auto;
   max-width: 1400px;
   border-bottom: 2px rgb(199, 201, 204) solid;
 }
-.cartwrap{
+.cartwrap {
   height: 500px;
   max-width: 1300px;
-  overflow-x:hidden;
+  overflow-x: hidden;
   overflow-y: scroll;
   margin: 0 auto;
   margin-bottom: 44px;
 }
-.updownbut{
+.updownbut {
+  cursor: pointer;
   font-size: 14px;
   background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 4px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom: 3px solid rgba(0,0,0,0.21);
-    border-radius: 6px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    font-weight: bolder;
-    min-width: 25px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 4px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.21);
+  border-radius: 6px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  font-weight: bolder;
+  min-width: 25px;
 }
-.cartsubmit{
+.cartsubmit {
   margin-top: 4px;
   font-size: 14px;
   background-color: rgb(19, 19, 19);
-    text-decoration: none;
-    color: rgb(244, 241, 241);
-    padding: 4px 12px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom: 3px solid rgba(0,0,0,0.21);
-    border-radius: 10px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    font-weight: bolder;
-    min-width: 80px;
+  text-decoration: none;
+  color: rgb(244, 241, 241);
+  padding: 4px 12px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.21);
+  border-radius: 10px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  font-weight: bolder;
+  min-width: 80px;
 }
-.cartwrap h2{
+.cartwrap h2 {
   margin-left: 12px;
   margin-bottom: 20px;
   font-size: 30px;
 }
-.cartdelbut{
+.cartdelbut {
   font-size: 14px;
   background-color: rgb(19, 19, 19);
-    text-decoration: none;
-    color: rgb(244, 241, 241);
-    padding: 4px 8px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom: 3px solid rgba(0,0,0,0.21);
-    border-radius: 10px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    font-weight: bolder;
-    min-width: 50px;
+  text-decoration: none;
+  color: rgb(244, 241, 241);
+  padding: 4px 8px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.21);
+  border-radius: 10px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  font-weight: bolder;
+  min-width: 50px;
 }
-.cartlistwrap{
+.cartlistwrap {
   padding: 10px;
   /* text-align: center; */
-  margin:auto;
+  margin: auto;
   margin-bottom: 8px;
   max-width: 1250px;
   height: 180px;
   border: 1px rgb(199, 201, 204) solid;
 }
-.carttop{
+.carttop {
   display: flex;
   /* flex-direction: row; */
 }
-.cartlist{
+.cartlist {
   display: flex;
   flex-direction: row;
   /* flex-wrap: wrap; */
 }
-.cartsource{
+.cartsource {
   margin-bottom: 4px;
   font-size: 12px;
   text-decoration-line: underline;
 }
-.cartprice{
+.cartprice {
   font-size: 19px;
   font-weight: bold;
 }
-.carttext{
+.carttext {
   padding-left: 4px;
   width: 100%;
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
   align-items: center;
 }
-.carttitlebox{
-  /* border: 1px rgb(78, 17, 175) solid; */
-  width: 500px;
+.carttitlebox {
+  /* border: 1px red solid; */
+  max-width: 500px;
+  width: 100%;
+  min-width: 310px;
 }
-.cartindex{
+.cartindex {
   display: hide;
 }
-.carttitle{
+.carttitle {
   margin-bottom: 12px;
 }
-.cartcontent{
+.cartcontent {
   font-size: 13px;
   color: rgb(64, 64, 64);
 }
-.cartimgbox{
+.cartimgbox {
   margin-right: 8px;
   position: relative;
-  width: 160px;
+  max-width: 150px;
+  min-width: 120px;
+  width: 100%;
   height: 150px;
 }
-.cartimg{
+.cartimg {
   width: 100%;
   height: 100%;
 }
 /* list Css */
-.listprice{
+.listprice {
   color: rgb(225, 32, 32);
 }
 .wrap {
@@ -490,7 +500,7 @@ div.titleBox p{
   padding: 4px;
   position: relative;
   border: 1px rgb(199, 201, 204) solid;
-  border-radius:1px;
+  border-radius: 1px;
 }
 .img {
   width: 100%;
@@ -501,14 +511,14 @@ div.titleBox p{
 .img:hover {
   transform: scale(1.1);
 }
-.listcontent{
+.listcontent {
   margin-bottom: 4px;
   width: 260px;
   font-size: 13px;
   color: rgb(65, 65, 65);
   font-weight: 600;
   white-space: nowrap;
-  overflow:hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .imgBox {
@@ -516,54 +526,59 @@ div.titleBox p{
   height: 300px;
   overflow: hidden;
 }
-span.원{
+span.원 {
   color: black;
 }
 /* header Css */
-.headerWrap{
+.headerWrap {
+  max-weight: 1200px;
   width: 100%;
   height: 68px;
   margin-bottom: 34px;
-  
+  /* border: 2px red solid; */
 }
-.header{
-  max-width: 1300px;
+.header {
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.headerinputbox{
-  width: 400px;
+.headerinputbox {
+  max-width: 400px;
+  width: 100%;
   display: flex;
   border-bottom: 3px rgb(41, 41, 41) solid;
 }
-.headerinput{
-  width:400px;
+.headerinput {
+  width: 100%;
   height: 40px;
-  min-width: 250px;
   padding-left: 12px;
-  border:none;
+  border: none;
   outline: none;
 }
-.headericonbox{
+.headericonbox {
   display: flex;
   min-width: 100px;
   align-items: center;
   justify-content: space-between;
 }
-.headerbut{
+.headerbut {
   border: 0;
   outline: 0;
-  background-color:white
+  background-color: white;
 }
-.mainlogoimgbox{
- margin-top: 12px;
- max-width: 180px;
- height: 80px;
+.mainlogoimgbox {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  max-width: 180px;
+  height: 80px;
+  min-weight: 100px;
+  width: 100%;
 }
-.mainlogoimg{
+.mainlogoimg {
   width: 100%;
 }
 
@@ -575,40 +590,40 @@ span.원{
 }
 .footer {
   max-width: 1300px;
-  height:100%;
+  height: 100%;
   background-color: #f7f8fa;
   margin: auto;
   padding-top: 12px;
   font-size: 14px;
 }
-.footerh3{
+.footerh3 {
   margin: 12px 0;
 }
-.footerTop{
+.footerTop {
   display: flex;
   width: 400px;
   margin: 20px;
   justify-content: space-between;
 }
-.footerMid{
+.footerMid {
   margin: 20px;
 }
-.footerMid div{
-  margin:4px 0;
+.footerMid div {
+  margin: 4px 0;
 }
-.footerbot{
+.footerbot {
   margin: 20px;
 }
-.footerspan{
+.footerspan {
   color: black;
   font-size: 14px;
 }
-.footerbot div{
+.footerbot div {
   margin: 4px 0;
 }
 
 /* mainBg Css */
-.BGimge-slider{
+.BGimge-slider {
   margin: auto;
   position: relative;
   left: 0;
@@ -617,14 +632,14 @@ span.원{
   height: 400;
   border: 1px red solid;
 }
-.BGsliderbody{
+.BGsliderbody {
   position: relative;
   max-width: 900px;
   height: 380px;
   border: 1px blue solid;
   margin: 12px auto;
 }
-.imglist{
+.imglist {
   /* position: relative;
   left: 10px;
   top: 10px; */
@@ -632,9 +647,9 @@ span.원{
   height: 370px;
   overflow: hidden;
 }
-.BGimg{
+.BGimg {
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.0;
+  opacity: 0;
 }

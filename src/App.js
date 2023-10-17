@@ -26,30 +26,29 @@ import Recently from "./components/recently";
 import Header from "./components/header";
 import Login from "./components/login";
 import Catetop from "./components/top";
-import Catebot from "./components/bot"
+import Catebot from "./components/bot";
 import Onepiece from "./components/onepiece";
 import Cateshoe from "./components/shoe";
 import Catebag from "./components/bag";
-import Catefashion from "./components/fashion"
+import Catefashion from "./components/fashion";
 
-import Outer from "../src/img/outer.png"
-import Piece from "../src/img/onepice.png"
-import Top from "../src/img/top.png"
-import Bot from "../src/img/bot.png"
-import Bag from "../src/img/bag.png"
-import Shoe from "../src/img/shoes.png"
-import Fashion from "../src/img/fa.png"
-import All from "../src/img/all.png"
+import Outer from "../src/img/outer.png";
+import Piece from "../src/img/onepice.png";
+import Top from "../src/img/top.png";
+import Bot from "../src/img/bot.png";
+import Bag from "../src/img/bag.png";
+import Shoe from "../src/img/shoes.png";
+import Fashion from "../src/img/fa.png";
+import All from "../src/img/all.png";
 import Cateouter from "./components/outer";
-
 
 function App(props) {
   // console.log(shoes);
   let navigate = useNavigate();
   const [shoes, setShoes] = useState(Data);
   const [count, setCount] = useState(1);
-  const [listtap,setListtap] =useState(0)
-  const [mainall,setMainall] = useState(false);
+  const [listtap, setListtap] = useState(0);
+  const [mainall, setMainall] = useState(false);
 
   // useEffect(()=>{
   //   axios
@@ -81,55 +80,96 @@ function App(props) {
           path="/"
           element={
             <>
-              {/* <Boom/> */}
-              <div>
-                <Nav />
-              </div>
-              {/* <MainBG /> */}
               <h1>오늘은 이 상품 어때요?</h1>
               <div className="smallcatagoriwrap">
                 <div className="smallcatagori">
-                <a onClick={()=>{setMainall(false);setListtap(null)}}>
+                  <a
+                    onClick={() => {
+                      setMainall(false);
+                      setListtap(null);
+                    }}
+                  >
                     <img src={All}></img>
                     <div>전체</div>
                   </a>
-                  <a onClick={()=>{setListtap(0); setMainall(true)}}>
+                  <a
+                    onClick={() => {
+                      setListtap(0);
+                      setMainall(true);
+                    }}
+                  >
                     <img src={Outer}></img>
                     <div>아우터</div>
                   </a>
-                  <a onClick={()=>{setListtap(1); setMainall(true)}}>
+                  <a
+                    onClick={() => {
+                      setListtap(1);
+                      setMainall(true);
+                    }}
+                  >
                     <img src={Piece}></img>
                     <div>원피스/세트</div>
                   </a>
-                  <a onClick={()=>{setListtap(2); setMainall(true)}}>
+                  <a
+                    onClick={() => {
+                      setListtap(2);
+                      setMainall(true);
+                    }}
+                  >
                     <img src={Top}></img>
                     <div>상의</div>
                   </a>
-                  <a onClick={()=>{setListtap(3); setMainall(true)}}>
+                  <a
+                    onClick={() => {
+                      setListtap(3);
+                      setMainall(true);
+                    }}
+                  >
                     <img src={Bot}></img>
                     <div>하의</div>
                   </a>
-                  <a onClick={()=>{setListtap(4); setMainall(true)}}>
+                  <a
+                    onClick={() => {
+                      setListtap(4);
+                      setMainall(true);
+                    }}
+                  >
                     <img src={Bag}></img>
                     <div>가방</div>
                   </a>
-                  <a onClick={()=>{setListtap(5); setMainall(true)}}>
+                  <a
+                    onClick={() => {
+                      setListtap(5);
+                      setMainall(true);
+                    }}
+                  >
                     <img src={Shoe}></img>
                     <div>신발</div>
                   </a>
-                  <a onClick={()=>{setListtap(6); setMainall(true)}}>
+                  <a
+                    onClick={() => {
+                      setListtap(6);
+                      setMainall(true);
+                    }}
+                  >
                     <img src={Fashion}></img>
                     <div>패션소품</div>
                   </a>
                 </div>
               </div>
               <div>
-                <ListtapCont 
-                  listtap={listtap} Cateouter={Cateouter} Onepiece={Onepiece} Catetop={Catetop}
-                  Catebot={Catebot} Catebag={Catebag} Cateshoe={Cateshoe} Catefashion={Catefashion} shoes={shoes} 
-                >
-                </ListtapCont>
-                {mainall ===false ? <List shoes={shoes} /> : null}
+                <ListtapCont
+                  listtap={listtap}
+                  Cateouter={Cateouter}
+                  Onepiece={Onepiece}
+                  Catetop={Catetop}
+                  Catebot={Catebot}
+                  Catebag={Catebag}
+                  Cateshoe={Cateshoe}
+                  Catefashion={Catefashion}
+                  shoes={shoes}
+                ></ListtapCont>
+                {mainall === false ? <List shoes={shoes} /> : null}
               </div>
               <div className="mainlistbutbox">
                 <button
@@ -153,7 +193,7 @@ function App(props) {
                       //실패했을때
                       .catch(() => {
                         console.log("err");
-                        alert("err");
+                        alert("더이상 상품이 없습니다.");
                       });
                   }}
                 >
@@ -194,13 +234,6 @@ function App(props) {
             </>
           }
         ></Route>
-        <Route path="/event" element={<Event />}>
-          <Route
-            path="one"
-            element={<div>첫 주문시 양배추즙 서비스t</div>}
-          ></Route>
-          <Route path="two" element={<div>생일기념 쿠폰받기</div>}></Route>
-        </Route>
         {/* //test */}
         <Route
           path="/test"
@@ -217,15 +250,39 @@ function App(props) {
   );
 }
 
-function ListtapCont({ listtap,Cateouter,Onepiece,Catetop,Catebot,Catebag,Cateshoe,Catefashion,shoes }) {
+function ListtapCont({
+  listtap,
+  Cateouter,
+  Onepiece,
+  Catetop,
+  Catebot,
+  Catebag,
+  Cateshoe,
+  Catefashion,
+  shoes,
+}) {
   return [
-    <div><Cateouter shoes={shoes}/></div>,
-    <div><Onepiece shoes={shoes}/></div>,
-    <div><Catetop shoes={shoes}/></div>,
-    <div><Catebot shoes={shoes}/></div>,
-    <div><Catebag shoes={shoes}/></div>,
-    <div><Cateshoe shoes={shoes}/></div>,
-    <div><Catefashion shoes={shoes}/></div>
+    <div>
+      <Cateouter shoes={shoes} />
+    </div>,
+    <div>
+      <Onepiece shoes={shoes} />
+    </div>,
+    <div>
+      <Catetop shoes={shoes} />
+    </div>,
+    <div>
+      <Catebot shoes={shoes} />
+    </div>,
+    <div>
+      <Catebag shoes={shoes} />
+    </div>,
+    <div>
+      <Cateshoe shoes={shoes} />
+    </div>,
+    <div>
+      <Catefashion shoes={shoes} />
+    </div>,
   ][listtap];
 }
 export default App;
