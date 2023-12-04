@@ -5,28 +5,7 @@ function Boom() {
   const [count, setCount] = useState(10);
   const [state, setState] = useState(0);
 
-  // useEffect(()=>{
-  //     setTimeout(()=>{
-  //         setToggle(false)
-  //     },10000)
-  // },[])
-  // useEffect(()=>{
-  //     // setTimeout(()=>{
-  //     //     setCount(count-1)
-  //     // },1000),
-  //     setTimeout(()=>{
-  //         setToggle(false)
-  //     },2000)
-  // },)
-
-  //true
-  // useEffect(()=>{
-  //     return()=>{
-  //         setTimeout(()=>{
-  //             setToggle(false)
-  //         },2000)
-  //     }
-  // },)
+  
   return (
     <>
       {toggle == true ? (

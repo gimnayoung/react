@@ -9,7 +9,7 @@ function Cart() {
 
   const cartItem = localStorage.getItem("cartItem");
   const newCartItem = JSON.parse(cartItem);
-  const [count, setCount] = useState(newCartItem[0].count);
+  const [count, setCount] = useState(newCartItem ? newCartItem[0]?.count : 0);
   console.log(newCartItem);
   console.log(localStorage.length);
   // console.log(count) 1
@@ -31,7 +31,10 @@ function Cart() {
     <div className="cartwrapwrap">
       <div className="cartwrap">
         <h2>장바구니</h2>
-        {newCartItem.map((list, index) => (
+        {
+          newCartItem&& newCartItem.length > 0 ? (
+            <>
+            {newCartItem?.map((list, index) => (
           <div className="cartlistwrap">
             <div className="cartlist">
               <div className="cartimgbox">
@@ -63,6 +66,15 @@ function Cart() {
             </div>
           </div>
         ))}
+            </>
+          ):(
+            <>
+            <div>
+              상품이없습니다. 😢
+            </div>
+            </>
+          )
+        }
       </div>
     </div>
   );

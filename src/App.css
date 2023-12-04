@@ -128,28 +128,46 @@ div .coupon {
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
+  margin-bottom: 20px;
+  @media screen and (max-width: 370px ){
+    /* height: 150px; */
+}
 }
 .ppl1box {
   width: 610px;
   margin: 28px 4px;
+  @media screen and (max-width: 370px ){
+    height: 100px;
+}
 }
 .ppl1 {
   width: 100%;
-  position: relative;
+  min-width: 175px;
+  /* position: relative; */
   height: 300px;
+  @media screen and (max-width: 370px ){
+    height: 150px;
+}
 }
 .ppl2 {
   width: 100%;
-  position: relative;
+  min-width: 170px;
+  /* position: relative; */
   height: 300px;
+  @media screen and (max-width: 370px ){
+    height: 150px;
+}
 }
 /* detail Css*/
 .selectBox {
+  @media screen and (max-width: 370px ){
+    width: 355px;
+}
   /* width: 500px; */
 }
 select {
   max-width: 500px;
-  min-white: 200px;
+  min-width: 200px;
   width: 100%;
   display: block;
   padding: 12px 12px;
@@ -212,6 +230,9 @@ div.titleBox p {
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 80px;
+  @media screen and (max-width: 370px ){
+    /* width: 100px; */
+}
 }
 .detailbutton {
   align-items: center;
@@ -219,11 +240,19 @@ div.titleBox p {
   width: 300px;
   height: 40px;
   border-bottom: 3px gray solid;
+  @media screen and (max-width: 370px ){
+    width: 85px;
+}
 }
 .detailA {
   font-weight: 700;
   font-size: 20px;
   padding: 4px 104px;
+  @media screen and (max-width: 370px ){
+    /* width: 100px; */
+    padding: 4px;
+    font-size: 12px;
+}
 }
 .titleBox {
   margin-bottom: 12px;
@@ -287,6 +316,9 @@ div.titleBox p {
 .buttonBox {
   display: flex;
   justify-content: space-evenly;
+  @media screen and (max-width: 370px ){
+    width: 360px;
+}
 }
 .detailfinalamount {
   padding: 4px;
@@ -294,6 +326,9 @@ div.titleBox p {
   margin: 32px 0;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 370px ){
+    width: 360px;
+}
 }
 .final {
   font-size: 17px;
@@ -487,6 +522,9 @@ div.titleBox p {
 .wrap {
   list-style: none;
   box-sizing: border-box;
+  @media screen and (max-width: 370px ){
+    /* overflow: hidden; */
+}
 }
 .listWrap {
   max-width: 1300px;
@@ -604,6 +642,10 @@ span.원 {
   width: 400px;
   margin: 20px;
   justify-content: space-between;
+  @media screen and (max-width: 370px ){
+    width: 330px;
+    font-size: 12px;
+}
 }
 .footerMid {
   margin: 20px;

@@ -173,7 +173,7 @@ function Detail(props) {
               </option>
             </select>
           </div>
-          <select>
+          <select className="selectBox">
             <option value="" selected>
               [사이즈]를 선택하세요.
             </option>

@@ -16,7 +16,6 @@ import Data from "./data/data.json";
 import List from "./components/list";
 import MainBG from "./components/mainBG";
 import Detail from "./components/detail";
-import Event from "./components/event";
 import Footer from "./components/footer";
 import Boom from "./components/boom";
 import Cart from "./components/cart";
