@@ -5,17 +5,21 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import Store from "./store/store";
+import Store from "./reducer/store"
+import { GoogleOAuthProvider } from '@react-oauth/google';
+const REACT_APP_GOOGLE_CLIENT_ID=process.env.REACT_APP_GOOGLE_CLIENT_ID
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //디버깅용 1번실행+1번실행
   // <React.StrictMode>
-  <Provider store={Store}>
-    <HashRouter>
-      <App />
-    </HashRouter>
-  </Provider>
+  <GoogleOAuthProvider clientId={REACT_APP_GOOGLE_CLIENT_ID}>
+    <Provider store={Store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </GoogleOAuthProvider>
   // </React.StrictMode>
 );
 
