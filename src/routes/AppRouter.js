@@ -51,7 +51,7 @@ const AppRouter = () => {
                </>
               }
             ></Route>
-            <Route path="/detail/:id" element={<Detail shoes={shoes} />}>
+            <Route path="/product/:id" element={<Detail shoes={shoes} />}>
             </Route>
             <Route
               path="/login"

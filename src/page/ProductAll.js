@@ -11,11 +11,12 @@ import { productActions } from "../action/productAction";
 
 const ProductAll = ({ mainall, shoes, setCount, setShoes, count }) => {
   const dispatch = useDispatch();
-  const productState = useSelector((state) => state.product.productList)
+  const productList = useSelector((state) => state.product.productList)
   const [query, setQuery] = useSearchParams();
   const name = query.get('name');
 
   useEffect(() => {
+    console.log(productList,"productList")
     dispatch(productActions.getProductList({
       name,
     }))
@@ -27,7 +28,16 @@ const ProductAll = ({ mainall, shoes, setCount, setShoes, count }) => {
       <div className="smallcatagoriwrap">
       </div>
       <div>
-        {mainall === false ? <List shoes={shoes} /> : null}
+      {
+          productList.length > 0 ? (
+            productList.map((item) => (
+              <div key={item._id}>
+                <List item={item} />
+              </div>
+            ))
+          ) : null
+}
+        {/* {mainall === false ? <List shoes={shoes} /> : null} */}
       </div>
       <div className="mainlistbutbox">
         <button

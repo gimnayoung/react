@@ -11,17 +11,19 @@ import { commonUiActions } from "../action/commonUiAction";
 import ProductTable from "../components/ProductTable";
 
 const AdminProduct = () => {
-  const {productList,totalPageNum}=useSelector(state=>state.product)
   const navigate = useNavigate();
   const [query, setQuery] = useSearchParams();
   const dispatch = useDispatch();
+  const productList = useSelector((state) => state.product.productList);
   const [showDialog, setShowDialog] = useState(false);
   const [searchQuery, setSearchQuery] = useState({
     page: query.get("page") || 1,
     name: query.get("name") || "",
   }); //검색 조건들을 저장하는 객체
 
+  const error = useSelector((state) => state.product.error);
   const [mode, setMode] = useState("new");
+  const totalPageNum = useSelector((state) => state.product.totalPageNum);
   const tableHeader = [
     "#",
     "Sku",
