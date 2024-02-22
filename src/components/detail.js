@@ -27,6 +27,9 @@ const Detail = () => {
   const navigate = useNavigate();
 
   const addItemToCart = () => {
+    //사이즈를 안했으면 err
+    //아직 로그인을 안한유저면 로그인페이지로
+    //카트에 아이템 추가하기
     if (size === "") {
       setSizeError(true);
       return;
@@ -38,6 +41,7 @@ const Detail = () => {
     dispatch(cartActions.addToCart({ id, size }));
   };
   const selectSize = (value) => {
+    //사이즈가 선택되어있으면 false로 바꿔놔야함.
     if (sizeError) setSizeError(false);
     setSize(value);
   };

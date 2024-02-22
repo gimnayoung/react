@@ -1,9 +1,13 @@
+//CartPage
 import { useDispatch, useSelector } from "react-redux";
-
+import { cartActions } from "../action/cartAction";
+import CartProductCard from "./CartProductCard";
+import OrderReceipt from "./OrderReceipt";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function Cart() {
+  const { cartList, totalPrice } = useSelector((state) => state.cart);
   //안에 요소 삭제해줌
   localStorage.removeItem("name");
 
@@ -27,15 +31,41 @@ function Cart() {
   };
   //스토어에서 만든 reducers안에있는거 사용할때
   let dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(cartActions.getCartList());
+  }, []);
+
   return (
+    <div>
     <div className="cartwrapwrap">
       <div className="cartwrap">
         <h2>장바구니</h2>
         {
-          newCartItem&& newCartItem.length > 0 ? (
+          cartList && cartList.length > 0 ? (
             <>
-            {newCartItem?.map((list, index) => (
-          <div className="cartlistwrap">
+              {cartList?.map((item, index) => (
+                <CartProductCard item={item} key={item._id} />
+              ))}
+            </>
+          ) : (
+            <>
+              <div>
+                상품이없습니다. 😢
+              </div>
+            </>
+          )
+        }
+      </div>
+    </div>
+     <OrderReceipt cartList={cartList} totalPrice={totalPrice} />
+    </div>
+  );
+}
+
+export default Cart;
+
+
+{/* <div className="cartlistwrap">
             <div className="cartlist">
               <div className="cartimgbox">
                 <img src={list.img} className="cartimg"></img>
@@ -64,20 +94,4 @@ function Cart() {
                 </button>
               </div>
             </div>
-          </div>
-        ))}
-            </>
-          ):(
-            <>
-            <div>
-              상품이없습니다. 😢
-            </div>
-            </>
-          )
-        }
-      </div>
-    </div>
-  );
-}
-
-export default Cart;
+          </div> */}

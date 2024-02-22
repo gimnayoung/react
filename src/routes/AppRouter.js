@@ -1,14 +1,15 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useDispatch ,useSelector} from "react-redux";
 import {
-    Route,
-    Routes,
-    Link,
-    useNavigate,
-    Outlet,
-    BrowserRouter,
-    HashRouter,
-  } from "react-router-dom";
+  Route,
+  Routes,
+  Link,
+  useNavigate,
+  Outlet,
+  BrowserRouter,
+  HashRouter,
+} from "react-router-dom";
 import "../App.css";
 
 import Nav from "../components/nav";
@@ -31,62 +32,70 @@ import AdminOrderPage from "../page/AdminOrderPage";
 import AdminProduct from "../page/AdminProduct";
 import PrivateRoute from "./PrivateRoute";
 import NewItemDialog from "../components/NewItemDialog"
+import { cartActions } from "../action/cartAction";
 
 const AppRouter = () => {
-    let navigate = useNavigate();
-    const [shoes, setShoes] = useState(Data);
-    const [count, setCount] = useState(1);
-    const [listtap, setListtap] = useState(0);
-    const [mainall, setMainall] = useState(false);
-    return (
-        <div>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-               <ProductAll mainall={mainall} shoes={shoes} setShoes={setShoes} count={count}
-               setCount={setCount}
-               />
-               </>
-              }
-            ></Route>
-            <Route path="/product/:id" element={<Detail shoes={shoes} />}>
-            </Route>
-            <Route
-              path="/login"
-              element={
-                <div>
-                  <Login />
-                </div>
-              }
-            ></Route>
-            <Route path="*" element={<div>에러페이지</div>}></Route>
-            <Route
-              path="/mypage"
-              element={
-                <>
-                  <Cart />
-                  <Recently />
-                </>
-              }
-            ></Route>
-            <Route
-              path="/test"
-              element={
-                <>
-                <NewItemDialog></NewItemDialog>
-                </>
-              }
-            ></Route>
-            <Route path="/register" element={<RegisterPage />} />
-            <Route element={<PrivateRoute permissionLevel="admin" />}>
-              <Route path="/admin/product" element={<AdminProduct />} />
-              <Route path="/admin/order" element={<AdminOrderPage />} />
-            </Route>
-          </Routes>
-          <Footer />
-        </div>
-      );
+  useEffect(() => {
+    if (user) {
+      dispatch(cartActions.getCartQty());
     }
+  }, [user]);
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user) ;
+  const [shoes, setShoes] = useState(Data);
+  const [count, setCount] = useState(1);
+  const [listtap, setListtap] = useState(0);
+  const [mainall, setMainall] = useState(false);
+  return (
+    <div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <ProductAll mainall={mainall} shoes={shoes} setShoes={setShoes} count={count}
+                setCount={setCount}
+              />
+            </>
+          }
+        ></Route>
+        <Route path="/product/:id" element={<Detail shoes={shoes} />}>
+        </Route>
+        <Route
+          path="/login"
+          element={
+            <div>
+              <Login />
+            </div>
+          }
+        ></Route>
+        <Route path="*" element={<div>에러페이지</div>}></Route>
+        <Route
+          path="/mypage"
+          element={
+            <>
+              <Cart />
+              <Recently />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/test"
+          element={
+            <>
+              <NewItemDialog></NewItemDialog>
+            </>
+          }
+        ></Route>
+        <Route path="/register" element={<RegisterPage />} />
+        <Route element={<PrivateRoute permissionLevel="admin" />}>
+          <Route path="/admin/product" element={<AdminProduct />} />
+          <Route path="/admin/order" element={<AdminOrderPage />} />
+        </Route>
+      </Routes>
+      <Footer />
+    </div>
+  );
+}
 export default AppRouter;
