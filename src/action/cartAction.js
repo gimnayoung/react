@@ -1,21 +1,23 @@
 import api from "../utils/api";
 import * as types from "../constants/cart.constants";
 import { toast } from "react-toastify";
-import { commonUiActions } from "../action/commonUiAction";
+import { commonUiActions } from "./commonUiAction";
+
 const addToCart =
   ({ id, size }) =>
     async (dispatch) => {
       try {
         dispatch({ type: types.ADD_TO_CART_REQUEST })
         const response = await api.post("/cart", { productId: id, size: size, qty: 1 });
-        console.log("aradf", response);
+        console.log("카트 아이템 추가", response);
         if (response.status !== 200) throw new Error(response.error);
         dispatch({ type: types.ADD_TO_CART_SUCCESS, payload: response.data.carItemQty });
-        commonUiActions.showToastMessage("카트에 담겼습니다 !", "success");
+        dispatch(commonUiActions.showToastMessage("카트에 담겼습니다 !", "success"));
+        
       }
       catch (error) {
         dispatch({ type: types.ADD_TO_CART_FAIL, payload: error.error });
-        commonUiActions.showToastMessage(error.error, "상품에 담기지 못했습니다.");
+        dispatch(commonUiActions.showToastMessage(error.error, "상품에 담기지 못했습니다."));
       }
     };
 
@@ -29,7 +31,7 @@ const getCartList = () => async (dispatch) => {
   }
   catch (error) {
     dispatch({type:types.GET_CART_LIST_FAIL,payload:error.error});
-    commonUiActions.showToastMessage(error.error, "상품을 가져오지 못했습니다.");
+    dispatch(commonUiActions.showToastMessage(error.error, "상품을 가져오지 못했습니다."));
   }
 };
 const deleteCartItem = (id) => async (dispatch) => { 
@@ -68,10 +70,11 @@ const getCartQty = () => async (dispatch) => {
     dispatch({type:types.GET_CART_QTY_SUCCESS, payload:response.data.qty});
   }
   catch(error){
-    dispatch({type:types.GET_CART_LIST_FAIL,payload:error});
+    dispatch({type:types.GET_CART_QTY_FAIL,payload:error});
     dispatch(commonUiActions.showToastMessage(error,"err"))
   }
 };
+
 export const cartActions = {
   addToCart,
   getCartList,

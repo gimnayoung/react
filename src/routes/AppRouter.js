@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useDispatch ,useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Route,
   Routes,
@@ -33,16 +33,18 @@ import AdminProduct from "../page/AdminProduct";
 import PrivateRoute from "./PrivateRoute";
 import NewItemDialog from "../components/NewItemDialog"
 import { cartActions } from "../action/cartAction";
+import PaymentPage from "../page/PaymentPage";
+import OrderCompletePage from "../page/OrderCompletePage";
 
 const AppRouter = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
   useEffect(() => {
     if (user) {
       dispatch(cartActions.getCartQty());
     }
   }, [user]);
   let navigate = useNavigate();
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user) ;
   const [shoes, setShoes] = useState(Data);
   const [count, setCount] = useState(1);
   const [listtap, setListtap] = useState(0);
@@ -62,6 +64,7 @@ const AppRouter = () => {
         ></Route>
         <Route path="/product/:id" element={<Detail shoes={shoes} />}>
         </Route>
+        <Route path="/payment/success" element={<OrderCompletePage />} />
         <Route
           path="/login"
           element={
@@ -70,6 +73,7 @@ const AppRouter = () => {
             </div>
           }
         ></Route>
+        <Route path="/payment" element={<PaymentPage />} />
         <Route path="*" element={<div>에러페이지</div>}></Route>
         <Route
           path="/mypage"
