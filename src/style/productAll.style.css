@@ -1,0 +1,10 @@
+.productAllWrap {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+  }
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }

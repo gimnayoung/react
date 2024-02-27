@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router";
-// import { Col, Row } from "react-bootstrap";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import ToastMessage from "../components/ToastMessage";
@@ -17,20 +16,24 @@ const AppLayout = ({ children }) => {
     dispatch(userActions.loginWithToken());
     console.log('작동')
   }, []);
-  if (location.pathname !== "/") {
-    return (
-      <div>
-        <ToastMessage />
-        {children}
-      </div>
-    );
-  }
+  // if (location.pathname !== "/") {
+  //   return (
+  //     <div>
+  //       <ToastMessage />
+  //       {children}
+  //     </div>
+  //   );
+  // }
   return (
     <div>
       <ToastMessage />
       {location.pathname.includes("admin") ? (
         <div className="vh-100">
           <div xs={12} md={3} className="sidebar mobile-sidebar">
+          <>
+          <Navbar user={user} />
+          {children}
+        </>
             <Sidebar />
           </div>
           <div xs={12} md={9}>

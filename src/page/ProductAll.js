@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 // import ProductCard from "../component/ProductCard";
-// import { Row, Col, Container } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { productActions } from "../action/productAction";
 import { commonUiActions } from "../action/commonUiAction";
 import axios from "axios";
 import List from "../components/list"
 import { productActions } from "../action/productAction";
+import "../style/productAll.style.css";
 
 const ProductAll = ({ mainall, shoes, setCount, setShoes, count }) => {
   const dispatch = useDispatch();
@@ -16,19 +15,17 @@ const ProductAll = ({ mainall, shoes, setCount, setShoes, count }) => {
   const name = query.get('name');
 
   useEffect(() => {
-    console.log(productList,"productList")
+    console.log(productList, "productList")
     dispatch(productActions.getProductList({
       name,
     }))
   }, [query])
-  // const { error } = productState;
   return (
     <div>
       <h1>오늘은 이 상품 어때요?</h1>
-      <div className="smallcatagoriwrap">
-      </div>
-      <div>
-      {
+      <div className="productAllWrap">
+      <div className="content">
+        {
           productList.length > 0 ? (
             productList.map((item) => (
               <div key={item._id}>
@@ -36,10 +33,10 @@ const ProductAll = ({ mainall, shoes, setCount, setShoes, count }) => {
               </div>
             ))
           ) : null
-}
-        {/* {mainall === false ? <List shoes={shoes} /> : null} */}
+        }
       </div>
-      <div className="mainlistbutbox">
+      </div>
+      {/* <div className="mainlistbutbox">
         <button
           className="mainlistbut"
           onClick={() => {
@@ -67,16 +64,7 @@ const ProductAll = ({ mainall, shoes, setCount, setShoes, count }) => {
         >
           상품 더보기
         </button>
-      </div>
-      <h1>지금 뜨고 있는 혜택</h1>
-      <div className="pplbox">
-        <div className="ppl1box">
-          {/* <PPL1 /> */}
-        </div>
-        <div className="ppl1box">
-          {/* <PPL2 /> */}
-        </div>
-      </div>
+      </div> */}
     </div>
   )
 }

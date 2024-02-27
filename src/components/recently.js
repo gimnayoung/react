@@ -1,3 +1,5 @@
+import "../style/cart.style.css"
+
 function Recently(){
     const watchedUser=localStorage.getItem("watchedUser")
     const newWatchedUser=JSON.parse(watchedUser)

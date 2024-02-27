@@ -1,0 +1,25 @@
+.listWrap{
+    width: 290px;
+    height: 350px;
+}
+.listBox{
+    width: 100%;
+}
+.list {
+    margin: 12px;
+    padding: 4px;
+    position: relative;
+    border: 1px rgb(199, 201, 204) solid;
+    overflow: hidden;
+    border-radius: 1px;
+    width: 100%;
+}
+.img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    transition: all 0.2s linear;
+  }
+  .img:hover {
+    transform: scale(1.1);
+  }

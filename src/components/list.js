@@ -8,7 +8,7 @@ import {
   useParams,
 } from "react-router-dom";
 import { currencyFormat } from "../utils/number";
-
+import "../style/list.style.css"
 import { BsHeart } from "react-icons/bs";
 
 
@@ -18,8 +18,8 @@ const List = ({ item }) => {
     navigate(`/product/${id}`);
   };
   return (
-    <div className="wrap">
-      <div className="listWrap">
+    <div className="listWrap">
+      <div className="listBox">
         <div className="list" onClick={() => showProduct(item._id)}>
           <img className="img" src={item?.image} alt={item?.image} />
           <div>{item?.name}</div>

@@ -1,12 +1,17 @@
 import React from "react";
 // import { faTrash } from "@fortawesome/free-solid-svg-icons";
-// import { Row, Col, Form } from "react-bootstrap";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../action/cartAction";
 import { currencyFormat } from "../utils/number";
+import "../style/cartProductCard.style.css"
+import { useEffect } from "react";
+
 
 const CartProductCard = ({ item }) => {
+    useEffect(()=>{
+console.log(item,'ime')
+    },[])
     const dispatch = useDispatch();
     const handleQtyChange = (id, value) => {
         dispatch(cartActions.updateQty(id, value));
@@ -16,25 +21,14 @@ const CartProductCard = ({ item }) => {
     };
     return (
         <>
-            <div className="cartlistwrap">
-                <div className="cartlist">
+            <div className="wrap">
+                <div className="cartWrap">
                     <div className="cartimgbox">
                         <img src={item.productId.image} className="cartimg"></img>
                     </div>
-                    <div className="carttext">
                         <div className="carttitlebox">
-                            <div className="cartsource">{item.source}</div>
                             <h4 className="carttitle">{item.productId.name}</h4>
-                            <div className="cartcontent">{item.content}</div>
-                        </div>
-                        <div>
-                            <button onClick={() => { }} className="updownbut">
-                                {/* <AiOutlineMinus size={15} /> */}
-                            </button>
-                            {/* {count} */}
-                            <button className="updownbut" onClick={() => { }}>
-                                {/* <AiOutlinePlus size={15} /> */}
-                            </button>
+                            <div className="carttitle">{item.productId.description}</div>
                         </div>
                         <div>
                             <div className="cartprice">
@@ -44,7 +38,7 @@ const CartProductCard = ({ item }) => {
                         </div>
                         <div>Size: {item.size}</div>
                         <div>Total: ₩ {currencyFormat(item.productId.price * item.qty)}</div>
-                        <div>
+                        {/* <div>
                             Quantity:
                             <select
                                 onChange={(event) => handleQtyChange(item._id, event.target.value)}
@@ -57,13 +51,12 @@ const CartProductCard = ({ item }) => {
                                     </option>
                                 ))}
                             </select>
-                        </div>
+                        </div> */}
                         <button onClick={() => deleteCart(item._id)} className="cartdelbut">
                             삭제
                         </button>
                     </div>
                 </div>
-            </div>
         </>
     );
 };

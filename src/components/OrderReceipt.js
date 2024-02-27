@@ -3,13 +3,14 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
 import { currencyFormat } from "../utils/number";
+import '../style/cart.style.css'
 
 const OrderReceipt = ({ cartList, totalPrice }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
   return (
-    <div className="receipt-container">
+    <div className="orderReceiptWrap">
       <h3 className="receipt-title">주문 내역</h3>
       <ul className="receipt-list">
         {cartList.length > 0 &&
@@ -34,20 +35,14 @@ const OrderReceipt = ({ cartList, totalPrice }) => {
       {location.pathname.includes("/mypage") && cartList.length > 0 && (
         <button
           variant="dark"
-          className="payment-button"
+          className="button"
           onClick={() => navigate("/payment")}
         >
           결제 계속하기
         </button>
       )}
-
       <div>
-        가능한 결제 수단 귀하가 결제 단계에 도달할 때까지 가격 및 배송료는
-        확인되지 않습니다.
-        <div>
-          30일의 반품 가능 기간, 반품 수수료 및 미수취시 발생하는 추가 배송 요금
-          읽어보기 반품 및 환불
-        </div>
+        교환,환불은 이용약관을 확인해주세요.
       </div>
     </div>
   );

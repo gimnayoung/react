@@ -1,26 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../action/userAction";
+import Mainlogo from "../img/logo.png";
+import { BsCart } from "react-icons/bs";
 
 const Navbar=({user})=>{
   const dispatch = useDispatch();
   const { cartItemQty } = useSelector((state) => state.cart) || {};
   const isMobile = window.navigator.userAgent.indexOf("Mobile") !== -1;
   const [showSearchBox, setShowSearchBox] = useState(false);
-  const menuList = [
-    "전체",
-    "아우터",
-    "원피스/세트",
-    "상의",
-    "하의",
-    "가방",
-    "신발",
-    "패션소품",
-  ];
   let [width, setWidth] = useState(0);
   let navigate = useNavigate();
+useEffect(()=>{
+  console.log(user,'usersdfs')
+},[])
   const onCheckEnter = (event) => {
     if (event.key === "Enter") {
       if (event.target.value === "") {
@@ -33,12 +29,39 @@ const Navbar=({user})=>{
     dispatch(userActions.logout());
   };
     return(
-    <div>
+      <div className="headerWrap">
+        <div className="header">
+        <a
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <div className="mainlogoimgbox">
+            <img className="mainlogoimg" src={Mainlogo}></img>
+          </div>
+        </a>
+        <div>
+          {!isMobile && ( // admin페이지에서 같은 search-box스타일을 쓰고있음 그래서 여기서 서치박스 안보이는것 처리를 해줌
+            <div className="headerinputbox">
+            <div>
+              {/* <FontAwesomeIcon icon={faSearch} /> */}
+              <input
+              className="headerinput"
+                type="text"
+                placeholder="제품검색"
+                onKeyPress={onCheckEnter}
+              />
+              </div>
+              <button className="headerbut" >
+              <BiSearch size={30} />
+             </button> 
+             </div>
+          )}
+        </div>
       {showSearchBox && (
         <div className="display-space-between mobile-search-box w-100">
           <div className="search display-space-between w-100">
             <div>
-              {/* <FontAwesomeIcon className="search-icon" icon={faSearch} /> */}
               <input
                 type="text"
                 placeholder="제품검색"
@@ -55,15 +78,9 @@ const Navbar=({user})=>{
         </div>
       )}
       <div className="side-menu" style={{ width: width }}>
-        <button className="closebtn" onClick={() => setWidth(0)}>
+        {/* <button className="closebtn" onClick={() => setWidth(0)}>
           &times;
-        </button>
-
-        <div className="side-menu-list" id="menu-list">
-          {menuList.map((menu, index) => (
-            <button key={index}>{menu}</button>
-          ))}
-        </div>
+        </button> */}
       </div>
       {user && user.level === "admin" && (
         <Link to="/admin/product?page=1" className="link-area">
@@ -72,70 +89,51 @@ const Navbar=({user})=>{
       )}
       <div className="nav-header">
         <div className="burger-menu hide">
-          {/* <FontAwesomeIcon icon={faBars} onClick={() => setWidth(250)} /> */}
         </div>
         <div>
           <div className="display-flex">
             {user ? (
               <div onClick={logout} className="nav-icon">
-                {/* <FontAwesomeIcon icon={faUser} /> */}
                 {!isMobile && (
                   <span style={{ cursor: "pointer" }}>로그아웃</span>
                 )}
               </div>
             ) : (
               <div onClick={() => navigate("/login")} className="nav-icon">
-                {/* <FontAwesomeIcon icon={faUser} /> */}
                 {!isMobile && <span style={{ cursor: "pointer" }}>로그인</span>}
               </div>
             )}
-            <div onClick={() => navigate("/cart")} className="nav-icon">
-              {/* <FontAwesomeIcon icon={faShoppingBag} /> */}
-              {!isMobile && (
-                <span style={{ cursor: "pointer" }}>{`쇼핑백(${
-                  cartItemQty || 0
-                })`}</span>
-              )}
-            </div>
+             {!user || !isMobile && (
+              <>
+              <div onClick={() => navigate("/mypage")} className="nav-icon">
+                  <span style={{ cursor: "pointer" }}>{`(${
+                    cartItemQty || 0
+                  })`}</span>
+                <div>
+                <BsCart size={30} />
+              </div>
+              </div>
+            </>
+            )}
             <div
               onClick={() => navigate("/account/purchase")}
               className="nav-icon"
             >
               {/* <FontAwesomeIcon icon={faBox} /> */}
-              {!isMobile && <span style={{ cursor: "pointer" }}>내 주문</span>}
+              { user===null || !isMobile && <span style={{ cursor: "pointer" }}>내 주문</span>}
             </div>
             {isMobile && (
               <div className="nav-icon" onClick={() => setShowSearchBox(true)}>
-                {/* <FontAwesomeIcon icon={faSearch} /> */}
               </div>
             )}
           </div>
         </div>
       </div>
-
       <div className="nav-logo">
         <Link to="/">
           {/* <img width={100} src="/image/hm-logo.png" alt="hm-logo.png" /> */}
         </Link>
       </div>
-      <div className="nav-menu-area">
-        <ul className="menu">
-          {menuList.map((menu, index) => (
-            <li key={index}>
-              <a href="#">{menu}</a>
-            </li>
-          ))}
-        </ul>
-        {!isMobile && ( // admin페이지에서 같은 search-box스타일을 쓰고있음 그래서 여기서 서치박스 안보이는것 처리를 해줌
-          <div className="search-box landing-search-box ">
-            {/* <FontAwesomeIcon icon={faSearch} /> */}
-            <input
-              type="text"
-              placeholder="제품검색"
-              onKeyPress={onCheckEnter}
-            />
-          </div>
-        )}
       </div>
     </div>
     )

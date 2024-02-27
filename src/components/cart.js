@@ -6,7 +6,18 @@ import OrderReceipt from "./OrderReceipt";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../style/cart.style.css"
+
+
 function Cart() {
+  // const navigate = useNavigate();
+  const { user } = useSelector((state) => state.user || {});
+//   useEffect(()=>{
+//   if(!user){
+//     navigate('/login')
+// }
+//   },[user,navigate])
   const { cartList, totalPrice } = useSelector((state) => state.cart);
   //안에 요소 삭제해줌
   localStorage.removeItem("name");
@@ -34,7 +45,7 @@ function Cart() {
   useEffect(() => {
     dispatch(cartActions.getCartList());
   }, []);
-
+if(user)
   return (
     <div>
     <div className="cartwrapwrap">
@@ -56,8 +67,10 @@ function Cart() {
           )
         }
       </div>
+      <div>
+        <OrderReceipt cartList={cartList} totalPrice={totalPrice} />
+      </div>
     </div>
-     <OrderReceipt cartList={cartList} totalPrice={totalPrice} />
     </div>
   );
 }
